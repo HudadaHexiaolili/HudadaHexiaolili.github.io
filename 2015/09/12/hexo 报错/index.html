@@ -123,18 +123,18 @@
 
 
 
-<meta name="description" content="在使用hexo部署博客到gitcafe的时候，出现了如下错误: 1234On branch masternothing to commit, working directory cleanerror: src refspec gitcafe-pages does not match any.error: failed to push some refs to &apos;git@gitcafe.com:my">
+<meta name="description" content="错误1 在使用hexo部署博客到gitcafe的时候，出现了如下错误: 12345678910INFO  Deploying: gitINFO  Clearing .deploy_git folder...INFO  Copying files from public folder...fatal: Not a git repository (or any of the parent direc">
 <meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo部署博客的err">
 <meta property="og:url" content="https://hudadahexiaolili.github.io/2015/09/12/hexo 报错/index.html">
 <meta property="og:site_name" content="胡甲俊的个人博客">
-<meta property="og:description" content="在使用hexo部署博客到gitcafe的时候，出现了如下错误: 1234On branch masternothing to commit, working directory cleanerror: src refspec gitcafe-pages does not match any.error: failed to push some refs to &apos;git@gitcafe.com:my">
+<meta property="og:description" content="错误1 在使用hexo部署博客到gitcafe的时候，出现了如下错误: 12345678910INFO  Deploying: gitINFO  Clearing .deploy_git folder...INFO  Copying files from public folder...fatal: Not a git repository (or any of the parent direc">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-12T04:05:58.111Z">
+<meta property="og:updated_time" content="2017-09-12T07:52:06.013Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo部署博客的err">
-<meta name="twitter:description" content="在使用hexo部署博客到gitcafe的时候，出现了如下错误: 1234On branch masternothing to commit, working directory cleanerror: src refspec gitcafe-pages does not match any.error: failed to push some refs to &apos;git@gitcafe.com:my">
+<meta name="twitter:description" content="错误1 在使用hexo部署博客到gitcafe的时候，出现了如下错误: 12345678910INFO  Deploying: gitINFO  Clearing .deploy_git folder...INFO  Copying files from public folder...fatal: Not a git repository (or any of the parent direc">
 
 
 
@@ -445,7 +445,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  71
+                  770
                 </span>
               
 
@@ -461,7 +461,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -482,10 +482,52 @@
       
 
       
-        <p>在使用hexo部署博客到gitcafe的时候，出现了如下错误:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">On branch master</div><div class="line">nothing to commit, working directory clean</div><div class="line">error: src refspec gitcafe-pages does not match any.</div><div class="line">error: failed to push some refs to <span class="string">'git@gitcafe.com:myname/myname.git'</span></div></pre></td></tr></table></figure>
+        <blockquote>
+<h2 id="错误1"><a href="#错误1" class="headerlink" title="错误1"></a>错误1</h2></blockquote>
+<p>在使用hexo部署博客到gitcafe的时候，出现了如下错误:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">INFO  Deploying: git</div><div class="line">INFO  Clearing .deploy_git folder...</div><div class="line">INFO  Copying files from public folder...</div><div class="line">fatal: Not a git repository (or any of the parent directories): .git</div><div class="line">FATAL Something's wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</div><div class="line">Error: fatal: Not a git repository (or any of the parent directories): .git</div><div class="line"></div><div class="line">    at ChildProcess.&lt;anonymous&gt; (E:\blog\HexoBlog\node_modules\hexo-util\lib\spawn.js:37:17)</div><div class="line">    at emitTwo (events.js:87:13)</div><div class="line">    ……</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <p><code>解决方法</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">删除.deploy文件夹，重新生成即可解决该问题</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">删除.deploy文件夹，重新生成即可解决该问题</div><div class="line">哈哈哈，抖机灵。成功。</div></pre></td></tr></table></figure>
+<blockquote>
+<h2 id="权限错误"><a href="#权限错误" class="headerlink" title="权限错误"></a>权限错误</h2></blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Permission denied (publickey).</div><div class="line">fatal: Could not read from remote repository.</div><div class="line"></div><div class="line">Please make sure you have the correct access rights</div><div class="line">and the repository exists.</div><div class="line">FATAL Something's wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</div><div class="line">Error: Warning: Permanently added 'github.com,192.30.253.112' (RSA) to the list of known hosts.</div><div class="line">Permission denied (publickey).</div><div class="line">fatal: Could not read from remote repository.</div><div class="line"></div><div class="line">Please make sure you have the correct access rights</div></pre></td></tr></table></figure>
+<p>有网友们有建议将deploy处设置不要使用https，而是改为SSH，如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">repository: https:<span class="comment">//github.com/username/username.github.io.git</span></div></pre></td></tr></table></figure>
+<p>修改为:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">repo：git@github.com:username/username.github.io.git</div></pre></td></tr></table></figure>
+<p>各种姿势修改都不对，究竟怎样使我们的博客可以重新部署到github上</p>
+<blockquote>
+<h2 id="当部署失败的时候，请按照以下步骤进行："><a href="#当部署失败的时候，请按照以下步骤进行：" class="headerlink" title="当部署失败的时候，请按照以下步骤进行："></a><strong>当部署失败的时候，请按照以下步骤进行：</strong></h2><h3 id="1-检查是否有SSH-key"><a href="#1-检查是否有SSH-key" class="headerlink" title="1.检查是否有SSH key"></a>1.检查是否有SSH key</h3></blockquote>
+<p>登陆github，点击头像位置处 Settings ——&gt; SSH and GPG keys ，查看是否有SSH keys。如果有，直接跳到第（3）步；如果没有，则继续。</p>
+<blockquote>
+<h3 id="2-新建-SSH-key，在git-shell-或者git-bash等命令窗口-，注意大小写："><a href="#2-新建-SSH-key，在git-shell-或者git-bash等命令窗口-，注意大小写：" class="headerlink" title="2.新建 SSH key，在git shell(或者git bash等命令窗口)，注意大小写："></a>2.新建 SSH key，在git shell(或者git bash等命令窗口)，注意大小写：</h3></blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C <span class="string">"邮箱名"</span></div></pre></td></tr></table></figure>
+<p>然后出现:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Generating public/private rsa key pair.</div><div class="line">Enter file <span class="keyword">in</span> which to save the key (<span class="regexp">/c/</span>Users/dell/.ssh/id_rsa):</div></pre></td></tr></table></figure>
+<p>直接回车就可以。<br>然后会出现：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):</div><div class="line">Enter same passphrase again:</div></pre></td></tr></table></figure>
+<p>要求你输入密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。</p>
+<p>注意：输入密码的时候没有*字样的，直接输入就好。<br>然后会出现：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Your identification has been saved in /c/Users/dell/.ssh/id_rsa.</div><div class="line">Your public key has been saved in /c/Users/dell/.ssh/id_rsa.pub.</div><div class="line">The key fingerprint is:</div><div class="line">65:69:······02:4b emailname@email.com</div><div class="line">The key's randomart image is:</div><div class="line">+--[ RSA 2048]----+</div><div class="line">|                 |</div><div class="line">|       .   o .   |</div><div class="line">|    . o o = o    |</div><div class="line">|   . o * = o     |</div><div class="line">|  E  o + o .     |</div><div class="line">| . o.   . .      |</div><div class="line">|     ..          |</div><div class="line">+-----------------+</div></pre></td></tr></table></figure>
+<p>至此，<code>密钥已经成功</code>生成</p>
+<blockquote>
+<h3 id="接下来在github上添加SSH-key："><a href="#接下来在github上添加SSH-key：" class="headerlink" title="接下来在github上添加SSH key："></a>接下来在github上添加SSH key：</h3></blockquote>
+<p>① 打开本地文件：id_rsa.pub（文件路径可以在上一步SSH生成成功后看到路径，比如我的是c/Users/dell/.ssh/id_rsa.pub），可以将这个文件在编辑器中打开，然后全选复制。</p>
+<p>② 登陆github，点击头像位置处 Settings ——&gt; SSH and GPG keys ——&gt; New SSH key，点击新建SSH key。</p>
+<p>③ 将 ① 中复制的内容粘贴在key文本框里，title可以不用填（或者自己起一个名字也可以）。</p>
+<blockquote>
+<h3 id="4-测试设置是否成功："><a href="#4-测试设置是否成功：" class="headerlink" title="4.测试设置是否成功："></a>4.测试设置是否成功：</h3></blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div></pre></td></tr></table></figure>
+<p>出现：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Hi username! You've successfully authenticated, but GitHub does not </div><div class="line">provide shell access.</div></pre></td></tr></table></figure>
+<blockquote>
+<h3 id="5-设置用户信息："><a href="#5-设置用户信息：" class="headerlink" title="5.设置用户信息："></a>5.设置用户信息：</h3></blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name <span class="string">"用户名"</span></div><div class="line">$ git config --global user.email  <span class="string">"你希望的邮箱名"</span></div></pre></td></tr></table></figure>
+<blockquote>
+<h3 id="6-然后就可以部署你的博客到github了"><a href="#6-然后就可以部署你的博客到github了" class="headerlink" title="6.然后就可以部署你的博客到github了"></a>6.然后就可以部署你的博客到github了</h3></blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div><div class="line">$ hexo d</div></pre></td></tr></table></figure>
+<p><code>结束...</code></p>
 
       
     </div>
@@ -559,8 +601,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/20/AJAX和模板引擎/" rel="next" title="AJAX和模板引擎">
-                <i class="fa fa-chevron-left"></i> AJAX和模板引擎
+              <a href="/2015/09/12/函数的四种调用模式/" rel="next" title="函数的四种调用模式">
+                <i class="fa fa-chevron-left"></i> 函数的四种调用模式
               </a>
             
           </div>
@@ -569,8 +611,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/12/函数的四种调用模式/" rel="prev" title="函数的四种调用模式">
-                函数的四种调用模式 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/01/12/staticMethod/" rel="prev" title="js 静态方法和实例方法的区别">
+                js 静态方法和实例方法的区别 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -631,8 +673,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/toux.gif"
@@ -780,6 +831,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#错误1"><span class="nav-number">1.</span> <span class="nav-text">错误1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#权限错误"><span class="nav-number">2.</span> <span class="nav-text">权限错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当部署失败的时候，请按照以下步骤进行："><span class="nav-number">3.</span> <span class="nav-text">当部署失败的时候，请按照以下步骤进行：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-检查是否有SSH-key"><span class="nav-number">3.1.</span> <span class="nav-text">1.检查是否有SSH key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-新建-SSH-key，在git-shell-或者git-bash等命令窗口-，注意大小写："><span class="nav-number">3.2.</span> <span class="nav-text">2.新建 SSH key，在git shell(或者git bash等命令窗口)，注意大小写：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接下来在github上添加SSH-key："><span class="nav-number">3.3.</span> <span class="nav-text">接下来在github上添加SSH key：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-测试设置是否成功："><span class="nav-number">3.4.</span> <span class="nav-text">4.测试设置是否成功：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-设置用户信息："><span class="nav-number">3.5.</span> <span class="nav-text">5.设置用户信息：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-然后就可以部署你的博客到github了"><span class="nav-number">3.6.</span> <span class="nav-text">6.然后就可以部署你的博客到github了</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
