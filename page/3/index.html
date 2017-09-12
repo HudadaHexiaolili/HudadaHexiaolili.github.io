@@ -351,7 +351,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hudadahexiaolili.github.io/2015/09/12/函数的四种调用模式/">
+    <link itemprop="mainEntityOfPage" href="https://hudadahexiaolili.github.io/2015/09/12/闭包/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hudada">
@@ -370,7 +370,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/09/12/函数的四种调用模式/" itemprop="url">函数的四种调用模式</a></h1>
+                <a class="post-title-link" href="/2015/09/12/闭包/" itemprop="url">闭包的学习</a></h1>
         
 
         <div class="post-meta">
@@ -422,7 +422,7 @@
 
           
           
-             <span id="/2015/09/12/函数的四种调用模式/" class="leancloud_visitors" data-flag-title="函数的四种调用模式">
+             <span id="/2015/09/12/闭包/" class="leancloud_visitors" data-flag-title="闭包的学习">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -447,7 +447,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,112
+                  1,588
                 </span>
               
 
@@ -463,7 +463,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  4
+                  6
                 </span>
               
             </div>
@@ -485,16 +485,18 @@
 
       
         
-          <h2 id="参数this在面向对象编程中非常重要，它的值取决于-调用的模式。"><a href="#参数this在面向对象编程中非常重要，它的值取决于-调用的模式。" class="headerlink" title="参数this在面向对象编程中非常重要，它的值取决于 调用的模式。"></a>参数this在面向对象编程中非常重要，它的值取决于 调用的模式。</h2><p><code>前言：</code></p>
-<pre><code>函数一般分为四种调用模式：
-1.函数调用模式： 一般独立函数调用
-2.方法调用模式： 作为方法调用，一定要有一个引导对象(宿主对象)
-3.构造器调用模式： 一定用来初始化对象，有 new 引导，return 可以重定向
-4.上下文调用模式： apple 或 call 
-</code></pre><h2 id="函数调用模式"><a href="#函数调用模式" class="headerlink" title="函数调用模式"></a>函数调用模式</h2>
+          <h2 id="本文主要记录了自己关于闭包的理解，和闭包的应用"><a href="#本文主要记录了自己关于闭包的理解，和闭包的应用" class="headerlink" title="本文主要记录了自己关于闭包的理解，和闭包的应用"></a>本文主要记录了自己关于闭包的理解，和闭包的应用</h2><h3 id="闭包的概念"><a href="#闭包的概念" class="headerlink" title="闭包的概念"></a>闭包的概念</h3><pre><code>闭包，就是函数在调用的时候，产生的那个内存结构，外界不能访问里面，它就是一个封闭的包裹结构，即闭包。
+</code></pre><p><strong>注意</strong></p>
+<ul>
+<li>函数定义后，放置在那里,只是一个普通的对象，不会创建任何内存，也不会影响到其他任何东西;</li>
+<li>只有函数运行起来，在函数执行过程中，在 结束之前，函数会构成一个封闭的空间；</li>
+<li>根据词法作用域，函数内在访问变量的时候，如果函数内没有可以到函数外面查找，反之不行；</li>
+<li>同时函数也包含了一定的范围；</li>
+<li>结合一下， 此时在函数结束之前，函数构成了一个封闭的包裹的结构，此为闭包。</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2015/09/12/函数的四种调用模式/#more" rel="contents">
+            <a class="btn" href="/2015/09/12/闭包/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -744,7 +746,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hudadahexiaolili.github.io/2015/09/12/闭包/">
+    <link itemprop="mainEntityOfPage" href="https://hudadahexiaolili.github.io/2015/09/12/函数的四种调用模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hudada">
@@ -763,7 +765,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/09/12/闭包/" itemprop="url">闭包的学习</a></h1>
+                <a class="post-title-link" href="/2015/09/12/函数的四种调用模式/" itemprop="url">函数的四种调用模式</a></h1>
         
 
         <div class="post-meta">
@@ -815,7 +817,7 @@
 
           
           
-             <span id="/2015/09/12/闭包/" class="leancloud_visitors" data-flag-title="闭包的学习">
+             <span id="/2015/09/12/函数的四种调用模式/" class="leancloud_visitors" data-flag-title="函数的四种调用模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -840,7 +842,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,588
+                  1,112
                 </span>
               
 
@@ -856,7 +858,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  6
+                  4
                 </span>
               
             </div>
@@ -878,18 +880,16 @@
 
       
         
-          <h2 id="本文主要记录了自己关于闭包的理解，和闭包的应用"><a href="#本文主要记录了自己关于闭包的理解，和闭包的应用" class="headerlink" title="本文主要记录了自己关于闭包的理解，和闭包的应用"></a>本文主要记录了自己关于闭包的理解，和闭包的应用</h2><h3 id="闭包的概念"><a href="#闭包的概念" class="headerlink" title="闭包的概念"></a>闭包的概念</h3><pre><code>闭包，就是函数在调用的时候，产生的那个内存结构，外界不能访问里面，它就是一个封闭的包裹结构，即闭包。
-</code></pre><p><strong>注意</strong></p>
-<ul>
-<li>函数定义后，放置在那里,只是一个普通的对象，不会创建任何内存，也不会影响到其他任何东西;</li>
-<li>只有函数运行起来，在函数执行过程中，在 结束之前，函数会构成一个封闭的空间；</li>
-<li>根据词法作用域，函数内在访问变量的时候，如果函数内没有可以到函数外面查找，反之不行；</li>
-<li>同时函数也包含了一定的范围；</li>
-<li>结合一下， 此时在函数结束之前，函数构成了一个封闭的包裹的结构，此为闭包。</li>
-</ul>
+          <h2 id="参数this在面向对象编程中非常重要，它的值取决于-调用的模式。"><a href="#参数this在面向对象编程中非常重要，它的值取决于-调用的模式。" class="headerlink" title="参数this在面向对象编程中非常重要，它的值取决于 调用的模式。"></a>参数this在面向对象编程中非常重要，它的值取决于 调用的模式。</h2><p><code>前言：</code></p>
+<pre><code>函数一般分为四种调用模式：
+1.函数调用模式： 一般独立函数调用
+2.方法调用模式： 作为方法调用，一定要有一个引导对象(宿主对象)
+3.构造器调用模式： 一定用来初始化对象，有 new 引导，return 可以重定向
+4.上下文调用模式： apple 或 call 
+</code></pre><h2 id="函数调用模式"><a href="#函数调用模式" class="headerlink" title="函数调用模式"></a>函数调用模式</h2>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2015/09/12/闭包/#more" rel="contents">
+            <a class="btn" href="/2015/09/12/函数的四种调用模式/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
