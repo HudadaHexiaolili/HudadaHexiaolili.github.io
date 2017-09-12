@@ -86,17 +86,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[js获取url传递参数,js获取url？号后面的参数]]></title>
-    <url>%2F2016%2F07%2F23%2F%E6%88%AA%E5%8F%96url%2F</url>
-    <content type="text"><![CDATA[我们在写项目的时候往往会需要获取 url 或截取 url ? 后的参数，为了方便，总结了以下几种方法: 方法一: 利用正则表达式 123456function getQueryString(name) &#123; var reg = new RegExp("(^|&amp;)" + name + "=([^&amp;]*)(&amp;|$)", "i"); var r = window.location.search.substr(1).match(reg); if (r != null) return unescape(r[2]); return null; &#125; 方法二: 获取 url 中 “?” 符号后的字串 12345678910111213function GetRequest() &#123; var url = location.search; //获取url中"?"符后的字串 var theRequest = new Object(); if (url.indexOf("?") != -1) &#123; var str = url.substr(1); strs = str.split("&amp;"); for(var i = 0; i &lt; strs.length; i ++) &#123; theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]); &#125; &#125; return theRequest; &#125; 方法三: 获取指定的 url 参数值 123456789101112131415/** * 获取指定的URL参数值 * URL:http://.../index?name=hudada * 参数：paramName URL参数 * 调用方法:getParam("name") * 返回值:hudada */ function getParam(paramName) &#123; paramValue = "", isFound = !1; if (this.location.search.indexOf("?") == 0 &amp;&amp; this.location.search.indexOf("=") &gt; 1) &#123; arrSource = unescape(this.location.search).substring(1, this.location.search.length).split("&amp;"), i = 0; while (i &lt; arrSource.length &amp;&amp; !isFound) arrSource[i].indexOf("=") &gt; 0 &amp;&amp; arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase() &amp;&amp; (paramValue = arrSource[i].split("=")[1], isFound = !0), i++ &#125; return paramValue == "" &amp;&amp; (paramValue = null), paramValue &#125; 其它参数介绍 1234567891011121314151617181920//设置或获取对象指定的文件名或路径。alert(window.location.pathname);//设置或获取整个 URL 为字符串。alert(window.location.href);//设置或获取与 URL 关联的端口号码。alert(window.location.port);//设置或获取 URL 的协议部分。alert(window.location.protocol);//设置或获取 href 属性中在井号“#”后面的分段。alert(window.location.hash);//设置或获取 location 或 URL 的 hostname 和 port 号码。alert(window.location.host);//设置或获取 href 属性中跟在问号后面的部分。alert(window.location.search);]]></content>
-      <categories>
-        <category>JavaScript学习</category>
-      </categories>
-      <tags>
-        <tag>截取url</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[a标签点击跳转页面后怎么给当前点击的a标签添加样式]]></title>
     <url>%2F2016%2F07%2F23%2Fa%2F</url>
     <content type="text"><![CDATA[在写项目的时候碰到一个问题:a标签点击跳转页面后,给当前点击的a标签添加的样式不会显示。怎么解决呢？ 问题描述 原本点击仪表盘等标签后，该标签的背景颜色会发生改变，可点击之后，a标签会发生跳转，该标签的背景色也不会再显示。 XML/HTML code： 123456789101112131415161718192021222324252627282930313233343536&lt;aside class='aside'&gt; &lt;div class='profile'&gt; &lt;div class='avatar img-circle'&gt; &lt;img src='./uploads/avatar.jpg' alt='您的头像'&gt; &lt;/div&gt; &lt;h4&gt;&lt;span &gt;胡大大&lt;/span&gt;&lt;/h4&gt; &lt;/div&gt; &lt;div class='navs'&gt; &lt;ul&gt; &lt;li&gt;&lt;a href='dashboard.html'&gt;&lt;i class='fa fa-bar-chart '&gt;&lt;/i&gt;仪表盘&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href='#' &gt;&lt;i class='fa fa fa-user'&gt;&lt;/i&gt;用户管理&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href='./index.html'&gt;&lt;i class='fa fa-mortar-board'&gt;&lt;/i&gt;讲师管理&lt;/a&gt;&lt;/li&gt; &lt;li&gt; &lt;a href='#' class='course_click'&gt; &lt;i class='fa fa-book'&gt;&lt;/i&gt;课程管理&lt;i class='arrow fa fa-angle-right pull-right'&gt;&lt;/i&gt; &lt;/a&gt; &lt;ul class='course ' style='display:none'&gt; &lt;li&gt;&lt;a href='#'&gt;课程添加&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href='#'&gt;课程列表&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href='#'&gt;课程分类&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href='#'&gt;课程专题&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href='#'&gt;&lt;i class='fa fa-link'&gt;&lt;/i&gt;广告管理&lt;/a&gt;&lt;/li&gt; &lt;li&gt; &lt;a href='#' class='course_click'&gt; &lt;i class='fa fa-cog fa-spin'&gt;&lt;/i&gt;系统设置&lt;i class='arrow fa fa-angle-right pull-right'&gt;&lt;/i&gt; &lt;/a&gt; &lt;ul class='course ' style='display:none'&gt; &lt;li&gt;&lt;a href='#'&gt;网站设置&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href='#'&gt;权限管理&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;/aside&gt; 那么怎么解决呢？ 一般使用以下几种方法: 用cookie记录这个打开的序列号，然后页面在跳转的时候再读出来。 循环a的链接，然后与location.href去比对，如果相同，或包含有同样字符串序列，则添加className. 给每个页面写一个页面的id值，然后每次判断，有值则addClass 12给url后面加一个参数，比如a.php？1，取url后面的1，判断对应的是第一个导航添加一个选中的class实际网站中，通常用php做页面判断，判断为是，则相应的a解析出来有active样式，判断为否则a中的active样式不解析 个人比较推荐第二种写法: 1234567891011121314151617181920212223242526272829303132// 方法1$(document).ready(function () &#123; var url = window.location.href; $('.navs li a').each(function () &#123; var userUrl = returnFileName($(this).attr('href')) + returnUrl($(this).attr('href')); var windowUrl = returnFileName(url) + returnUrl(url); if (userUrl == windowUrl ) &#123; $(this).addClass('active'); &#125; &#125;); //以下为截取url的方法 function returnUrl(href) &#123; var number = href.lastIndexOf("/"); return href.substring(number + 1); &#125; function returnFileName(href) &#123; var number1 = href.lastIndexOf("/"); var number2 = href.substring(0, number1).lastIndexOf("/"); return href.substring(number1, number2 + 1); &#125;&#125;)// 推荐这一种写法$(document).ready(function () &#123; $('.navs li a').each(function () &#123; if ($($(this))[0].href == String(window.location)) $(this).addClass('active').attr('href', 'javascript:void(0);'); &#125;); &#125;)]]></content>
@@ -105,6 +94,17 @@
       </categories>
       <tags>
         <tag>a标签跳转</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[js获取url传递参数,js获取url？号后面的参数]]></title>
+    <url>%2F2016%2F07%2F23%2F%E6%88%AA%E5%8F%96url%2F</url>
+    <content type="text"><![CDATA[我们在写项目的时候往往会需要获取 url 或截取 url ? 后的参数，为了方便，总结了以下几种方法: 方法一: 利用正则表达式 123456function getQueryString(name) &#123; var reg = new RegExp("(^|&amp;)" + name + "=([^&amp;]*)(&amp;|$)", "i"); var r = window.location.search.substr(1).match(reg); if (r != null) return unescape(r[2]); return null; &#125; 方法二: 获取 url 中 “?” 符号后的字串 12345678910111213function GetRequest() &#123; var url = location.search; //获取url中"?"符后的字串 var theRequest = new Object(); if (url.indexOf("?") != -1) &#123; var str = url.substr(1); strs = str.split("&amp;"); for(var i = 0; i &lt; strs.length; i ++) &#123; theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]); &#125; &#125; return theRequest; &#125; 方法三: 获取指定的 url 参数值 123456789101112131415/** * 获取指定的URL参数值 * URL:http://.../index?name=hudada * 参数：paramName URL参数 * 调用方法:getParam("name") * 返回值:hudada */ function getParam(paramName) &#123; paramValue = "", isFound = !1; if (this.location.search.indexOf("?") == 0 &amp;&amp; this.location.search.indexOf("=") &gt; 1) &#123; arrSource = unescape(this.location.search).substring(1, this.location.search.length).split("&amp;"), i = 0; while (i &lt; arrSource.length &amp;&amp; !isFound) arrSource[i].indexOf("=") &gt; 0 &amp;&amp; arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase() &amp;&amp; (paramValue = arrSource[i].split("=")[1], isFound = !0), i++ &#125; return paramValue == "" &amp;&amp; (paramValue = null), paramValue &#125; 其它参数介绍 1234567891011121314151617181920//设置或获取对象指定的文件名或路径。alert(window.location.pathname);//设置或获取整个 URL 为字符串。alert(window.location.href);//设置或获取与 URL 关联的端口号码。alert(window.location.port);//设置或获取 URL 的协议部分。alert(window.location.protocol);//设置或获取 href 属性中在井号“#”后面的分段。alert(window.location.hash);//设置或获取 location 或 URL 的 hostname 和 port 号码。alert(window.location.host);//设置或获取 href 属性中跟在问号后面的部分。alert(window.location.search);]]></content>
+      <categories>
+        <category>JavaScript学习</category>
+      </categories>
+      <tags>
+        <tag>截取url</tag>
       </tags>
   </entry>
   <entry>
@@ -240,17 +240,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hexo部署博客的err]]></title>
-    <url>%2F2015%2F09%2F12%2Fhexo%20%E6%8A%A5%E9%94%99%2F</url>
-    <content type="text"><![CDATA[在使用hexo部署博客到gitcafe的时候，出现了如下错误: 1234On branch masternothing to commit, working directory cleanerror: src refspec gitcafe-pages does not match any.error: failed to push some refs to 'git@gitcafe.com:myname/myname.git' 解决方法 1删除.deploy文件夹，重新生成即可解决该问题]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[函数的四种调用模式]]></title>
     <url>%2F2015%2F09%2F12%2F%E5%87%BD%E6%95%B0%E7%9A%84%E5%9B%9B%E7%A7%8D%E8%B0%83%E7%94%A8%E6%A8%A1%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[参数this在面向对象编程中非常重要，它的值取决于 调用的模式。前言： 函数一般分为四种调用模式： 1.函数调用模式： 一般独立函数调用 2.方法调用模式： 作为方法调用，一定要有一个引导对象(宿主对象) 3.构造器调用模式： 一定用来初始化对象，有 new 引导，return 可以重定向 4.上下文调用模式： apple 或 call 函数调用模式 函数的定义方式 声明式 表达式式 Function 单独独立调用的就是函数 函数名(参数); 函数调用模式中，this 表示 全局对象 window 方法调用模式 方法本身就是函数，但是方法不是单独独立的使用，而是通过对象引导调用 对象.方法( 参数 ); 方法调用模式中， this 指向引导方法的对象 方法调用一定要有宿主对象 方法一定是 某个对象 的 方法。对象可以是任何对象 1234567891011121314function foo() &#123; console.log( this );&#125;var o = &#123; name : "Tom" &#125;;o.foo = foo;foo(); //函数调用o.foo();//方法调用--------------------------function func () &#123; console.log(' 函数也是是对象 ');&#125;func.foo = foo;foo();//函数调用func.foo();//方法调用 构造器调用模式(构造函数模式 或 构造方法模式) constructor 特征: 在函数前面用 new 来引导 this 的含义: 刚刚被创建出来的实例对象 注意返回值 调用构造函数时，无参可省略括号 执行步骤 123456789101112var p = new Person();// new 是运算符，用来申请创建对象，创建出来的对象传递给构造函数的 this//利用构造函数对其初始化function Person () &#123; this.name = "Tom"; this.age = "19"; this.gender = "男";&#125;// 返回值// 如果不写return，那么构造函数 默认返回 this// 若在构造函数中写return ,并紧跟基本类型(如 return num,ruturn 123).则忽略返回类型// 若在构造函数中写return,并紧跟 引用类型 ，那么构造函数返回 该引用类型数据，忽略 this 构造函数小结 (1) 构造函数无参数，可以省略括号 1var p = new Person; (2) 创建对象并直接调用 其方法 12345( new Person () ).sayHello();//可以省略调整结合性的括号new Person ().sayHello();//若省略构造函数的括号，就必须加结合性的括号( new Person ).sayHello (); 上下文调用模式 特征: 一定是由一个对象引导调用 this 的含义: 引导调用的这个对象 -&gt; 上下文调用模式 -&gt; 术语 上下文: 就是 this. -&gt; 上下文调用模式有标准的调用语法: 函数名.call( ... ) 函数名.apply( ... ) -&gt; 上下文调用模式这两个形式功能一模一样. 只是参数的形式不同. -&gt; 上下文调用之所以称为上下文调用, 是因为我们允许利用参数来改变 this 的含义. 1234567891011例如: var o1 = &#123; name: 'jim' &#125;; var o2 = &#123; name: 'tom' &#125;; function func() &#123; console.log( this ); &#125; func() // 函数模式 =&gt; window o1.func = func; o1.func(); // 方法模式 =&gt; o1 func.call( o1 ); // this 就是 o1 func.call( o2 ); // this 就是 o2 func.call( null ); // this 就是 window 说明: 在利用上下文调用的时候, call 或 apply 的第 0 个参数表示就是 函数中 this 的指向 如果传入 null 或 undefined 或不传, this 就是 window 如果传入的是 对象, this 就是传入对象 如果传入的是 基本类型( 数字, 字符串, boolean )就会将基本类型转换成对应包装类型, 赋值给 this -&gt; 关于参数 call 在调用的时候, 函数的参数散列的在 call 中提供. apply 在调用的时候, 函数的参数以数组的形式提供. 12345678910111213141516171819202122232425例如: ( 填空题 ) function func( num1,num2 ) &#123; console.log( num1 + num2 ); &#125; 如果用 call 来调用, 下面的代码 与 func( 1, 2 ) 调用等价 func.call( null, 1, 2 ) 如果用 apply 来调用, 下面的代码与 func( 3, 4 ) 调用等价 func.apply( null, [ 3, 4 ] )验证: 看下面这个代码: function func( arr, callback ) &#123; for ( var i = 0; i &lt; arr.length; i++ ) &#123; callback( arr[ i ], i ); &#125; &#125; 这个 func 用 call 和 apply 分别怎么调用 如果以函数的形式调用 func( 'a,b,c'.split( ',' ), function ( v, i ) &#123; console.log( i + ', ' + v ); &#125; )注意: 有了这个写法, 表示以前凡是使用 函数 与 方法的地方都可以修改成 上下文调用模式例如: var html = template( 'tpl', &#123;&#125; ); =&gt; var html = template.call( null, 'tpl', &#123;&#125; ); var html = template.apply( null, [ 'tpl', &#123;&#125; ] );]]></content>
@@ -261,6 +250,17 @@
         <tag>apply</tag>
         <tag>call</tag>
         <tag>函数调用模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo部署博客的err]]></title>
+    <url>%2F2015%2F09%2F12%2Fhexo%20%E6%8A%A5%E9%94%99%2F</url>
+    <content type="text"><![CDATA[在使用hexo部署博客到gitcafe的时候，出现了如下错误: 1234On branch masternothing to commit, working directory cleanerror: src refspec gitcafe-pages does not match any.error: failed to push some refs to 'git@gitcafe.com:myname/myname.git' 解决方法 1删除.deploy文件夹，重新生成即可解决该问题]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
