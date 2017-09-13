@@ -351,6 +351,209 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hudadahexiaolili.github.io/2016/02/12/some-every/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hudada">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/toux.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="胡甲俊的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/02/12/some-every/" itemprop="url">js some,foreach,map,filter,every对比</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-02-12T00:00:00+08:00">
+                2016-02-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript学习/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2016/02/12/some-every/" class="leancloud_visitors" data-flag-title="js some,foreach,map,filter,every对比">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  603
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>希望通过这篇笔记,加深自己对 ES5 新增的数组方法的理解,可以帮我们少一些 for 循环.</p>
+<blockquote>
+<p><strong>[…].some(ck)函数       —-      某个一个为true,则为true</strong></p>
+</blockquote>
+<ol>
+<li>some意指”某些”,指是否”某些项”合乎条件。</li>
+<li>皇上:有一个满意的，就来侍寝就可以了。<br> (对数组中每个元素执行一次ck函数,直到某个元素返回true,则直接返回true。如果都返回false,则返回false。)</li>
+<li>返回值为 Boolean 值。</li>
+</ol>
+<p>检查整个数组中是否有满足ck函数的元素。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = [<span class="number">1</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">6</span>].some(  <span class="function">(<span class="params">v,i</span>)  =&gt;</span>  (v&gt;<span class="number">10</span>) )      </div><div class="line"><span class="comment">//所有元素都不满足，返回result = false</span></div><div class="line"><span class="keyword">var</span> result = [<span class="number">10</span>,<span class="number">5</span>,<span class="number">30</span>,<span class="number">60</span>].some(  <span class="function">(<span class="params">v,i</span>)  =&gt;</span>  (v&lt;<span class="number">10</span>) )      </div><div class="line"><span class="comment">//有一个(多个)满足，返回result  = true</span></div></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/02/12/some-every/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+    <div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://hudadahexiaolili.github.io/2016/01/12/staticMethod/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -551,7 +754,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hudadahexiaolili.github.io/2015/09/12/闭包/">
+    <link itemprop="mainEntityOfPage" href="https://hudadahexiaolili.github.io/2015/09/12/函数的四种调用模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hudada">
@@ -570,7 +773,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/09/12/闭包/" itemprop="url">闭包的学习</a></h1>
+                <a class="post-title-link" href="/2015/09/12/函数的四种调用模式/" itemprop="url">函数的四种调用模式</a></h1>
         
 
         <div class="post-meta">
@@ -622,7 +825,7 @@
 
           
           
-             <span id="/2015/09/12/闭包/" class="leancloud_visitors" data-flag-title="闭包的学习">
+             <span id="/2015/09/12/函数的四种调用模式/" class="leancloud_visitors" data-flag-title="函数的四种调用模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -647,7 +850,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,588
+                  1,112
                 </span>
               
 
@@ -663,7 +866,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  6
+                  4
                 </span>
               
             </div>
@@ -685,18 +888,16 @@
 
       
         
-          <h2 id="本文主要记录了自己关于闭包的理解，和闭包的应用"><a href="#本文主要记录了自己关于闭包的理解，和闭包的应用" class="headerlink" title="本文主要记录了自己关于闭包的理解，和闭包的应用"></a>本文主要记录了自己关于闭包的理解，和闭包的应用</h2><h3 id="闭包的概念"><a href="#闭包的概念" class="headerlink" title="闭包的概念"></a>闭包的概念</h3><pre><code>闭包，就是函数在调用的时候，产生的那个内存结构，外界不能访问里面，它就是一个封闭的包裹结构，即闭包。
-</code></pre><p><strong>注意</strong></p>
-<ul>
-<li>函数定义后，放置在那里,只是一个普通的对象，不会创建任何内存，也不会影响到其他任何东西;</li>
-<li>只有函数运行起来，在函数执行过程中，在 结束之前，函数会构成一个封闭的空间；</li>
-<li>根据词法作用域，函数内在访问变量的时候，如果函数内没有可以到函数外面查找，反之不行；</li>
-<li>同时函数也包含了一定的范围；</li>
-<li>结合一下， 此时在函数结束之前，函数构成了一个封闭的包裹的结构，此为闭包。</li>
-</ul>
+          <h2 id="参数this在面向对象编程中非常重要，它的值取决于-调用的模式。"><a href="#参数this在面向对象编程中非常重要，它的值取决于-调用的模式。" class="headerlink" title="参数this在面向对象编程中非常重要，它的值取决于 调用的模式。"></a>参数this在面向对象编程中非常重要，它的值取决于 调用的模式。</h2><p><code>前言：</code></p>
+<pre><code>函数一般分为四种调用模式：
+1.函数调用模式： 一般独立函数调用
+2.方法调用模式： 作为方法调用，一定要有一个引导对象(宿主对象)
+3.构造器调用模式： 一定用来初始化对象，有 new 引导，return 可以重定向
+4.上下文调用模式： apple 或 call 
+</code></pre><h2 id="函数调用模式"><a href="#函数调用模式" class="headerlink" title="函数调用模式"></a>函数调用模式</h2>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2015/09/12/闭包/#more" rel="contents">
+            <a class="btn" href="/2015/09/12/函数的四种调用模式/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -950,7 +1151,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hudadahexiaolili.github.io/2015/09/12/函数的四种调用模式/">
+    <link itemprop="mainEntityOfPage" href="https://hudadahexiaolili.github.io/2015/09/12/闭包/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hudada">
@@ -969,7 +1170,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/09/12/函数的四种调用模式/" itemprop="url">函数的四种调用模式</a></h1>
+                <a class="post-title-link" href="/2015/09/12/闭包/" itemprop="url">闭包的学习</a></h1>
         
 
         <div class="post-meta">
@@ -1021,7 +1222,7 @@
 
           
           
-             <span id="/2015/09/12/函数的四种调用模式/" class="leancloud_visitors" data-flag-title="函数的四种调用模式">
+             <span id="/2015/09/12/闭包/" class="leancloud_visitors" data-flag-title="闭包的学习">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1046,7 +1247,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,112
+                  1,588
                 </span>
               
 
@@ -1062,7 +1263,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  4
+                  6
                 </span>
               
             </div>
@@ -1084,16 +1285,18 @@
 
       
         
-          <h2 id="参数this在面向对象编程中非常重要，它的值取决于-调用的模式。"><a href="#参数this在面向对象编程中非常重要，它的值取决于-调用的模式。" class="headerlink" title="参数this在面向对象编程中非常重要，它的值取决于 调用的模式。"></a>参数this在面向对象编程中非常重要，它的值取决于 调用的模式。</h2><p><code>前言：</code></p>
-<pre><code>函数一般分为四种调用模式：
-1.函数调用模式： 一般独立函数调用
-2.方法调用模式： 作为方法调用，一定要有一个引导对象(宿主对象)
-3.构造器调用模式： 一定用来初始化对象，有 new 引导，return 可以重定向
-4.上下文调用模式： apple 或 call 
-</code></pre><h2 id="函数调用模式"><a href="#函数调用模式" class="headerlink" title="函数调用模式"></a>函数调用模式</h2>
+          <h2 id="本文主要记录了自己关于闭包的理解，和闭包的应用"><a href="#本文主要记录了自己关于闭包的理解，和闭包的应用" class="headerlink" title="本文主要记录了自己关于闭包的理解，和闭包的应用"></a>本文主要记录了自己关于闭包的理解，和闭包的应用</h2><h3 id="闭包的概念"><a href="#闭包的概念" class="headerlink" title="闭包的概念"></a>闭包的概念</h3><pre><code>闭包，就是函数在调用的时候，产生的那个内存结构，外界不能访问里面，它就是一个封闭的包裹结构，即闭包。
+</code></pre><p><strong>注意</strong></p>
+<ul>
+<li>函数定义后，放置在那里,只是一个普通的对象，不会创建任何内存，也不会影响到其他任何东西;</li>
+<li>只有函数运行起来，在函数执行过程中，在 结束之前，函数会构成一个封闭的空间；</li>
+<li>根据词法作用域，函数内在访问变量的时候，如果函数内没有可以到函数外面查找，反之不行；</li>
+<li>同时函数也包含了一定的范围；</li>
+<li>结合一下， 此时在函数结束之前，函数构成了一个封闭的包裹的结构，此为闭包。</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2015/09/12/函数的四种调用模式/#more" rel="contents">
+            <a class="btn" href="/2015/09/12/闭包/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1772,7 +1975,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">28</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1794,7 +1997,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

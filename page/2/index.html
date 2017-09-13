@@ -351,7 +351,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hudadahexiaolili.github.io/2016/07/23/截取url/">
+    <link itemprop="mainEntityOfPage" href="https://hudadahexiaolili.github.io/2016/07/23/a/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hudada">
@@ -370,7 +370,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/07/23/截取url/" itemprop="url">js获取url传递参数,js获取url？号后面的参数</a></h1>
+                <a class="post-title-link" href="/2016/07/23/a/" itemprop="url">a标签点击跳转页面后怎么给当前点击的a标签添加样式</a></h1>
         
 
         <div class="post-meta">
@@ -405,8 +405,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript学习/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript学习</span>
+                  <a href="/categories/jQuery技术学习/" itemprop="url" rel="index">
+                    <span itemprop="name">jQuery技术学习</span>
                   </a>
                 </span>
 
@@ -422,7 +422,7 @@
 
           
           
-             <span id="/2016/07/23/截取url/" class="leancloud_visitors" data-flag-title="js获取url传递参数,js获取url？号后面的参数">
+             <span id="/2016/07/23/a/" class="leancloud_visitors" data-flag-title="a标签点击跳转页面后怎么给当前点击的a标签添加样式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -447,7 +447,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  381
+                  636
                 </span>
               
 
@@ -463,7 +463,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -485,22 +485,10 @@
 
       
         
-          <p>我们在写项目的时候往往会需要获取 url 或截取 url ? 后的参数，为了方便，总结了以下几种方法:</p>
-<blockquote>
-<p>方法一: 利用正则表达式</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getQueryString</span>(<span class="params">name</span>) </span>&#123; </div><div class="line">        <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"(^|&amp;)"</span> + name + <span class="string">"=([^&amp;]*)(&amp;|$)"</span>, <span class="string">"i"</span>); </div><div class="line">        <span class="keyword">var</span> r = <span class="built_in">window</span>.location.search.substr(<span class="number">1</span>).match(reg); </div><div class="line">        <span class="keyword">if</span> (r != <span class="literal">null</span>) <span class="keyword">return</span> <span class="built_in">unescape</span>(r[<span class="number">2</span>]); </div><div class="line">        <span class="keyword">return</span> <span class="literal">null</span>; </div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>方法二:  获取 url 中 “?” 符号后的字串</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">GetRequest</span>(<span class="params"></span>) </span>&#123;  </div><div class="line">   <span class="keyword">var</span> url = location.search; <span class="comment">//获取url中"?"符后的字串  </span></div><div class="line">   <span class="keyword">var</span> theRequest = <span class="keyword">new</span> <span class="built_in">Object</span>();  </div><div class="line">   <span class="keyword">if</span> (url.indexOf(<span class="string">"?"</span>) != <span class="number">-1</span>) &#123;  </div><div class="line">      <span class="keyword">var</span> str = url.substr(<span class="number">1</span>);  </div><div class="line">      strs = str.split(<span class="string">"&amp;"</span>);  </div><div class="line">      <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; strs.length; i ++) &#123;  </div><div class="line">         theRequest[strs[i].split(<span class="string">"="</span>)[<span class="number">0</span>]]=<span class="built_in">unescape</span>(strs[i].split(<span class="string">"="</span>)[<span class="number">1</span>]);  </div><div class="line">      &#125;  </div><div class="line">   &#125;  </div><div class="line">   <span class="keyword">return</span> theRequest;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>方法三:  获取<strong>指定</strong>的 url 参数值 </p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** </span></div><div class="line"> * 获取指定的URL参数值 </div><div class="line"> * URL:http://.../index?name=hudada </div><div class="line"> * 参数：paramName URL参数 </div><div class="line"> * 调用方法:getParam("name") </div><div class="line"> * 返回值:hudada</div><div class="line"> */ </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getParam</span>(<span class="params">paramName</span>) </span>&#123; </div><div class="line">    paramValue = <span class="string">""</span>, isFound = !<span class="number">1</span>; </div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.location.search.indexOf(<span class="string">"?"</span>) == <span class="number">0</span> &amp;&amp; <span class="keyword">this</span>.location.search.indexOf(<span class="string">"="</span>) &gt; <span class="number">1</span>) &#123; </div><div class="line">        arrSource = <span class="built_in">unescape</span>(<span class="keyword">this</span>.location.search).substring(<span class="number">1</span>, <span class="keyword">this</span>.location.search.length).split(<span class="string">"&amp;"</span>), i = <span class="number">0</span>; </div><div class="line">        <span class="keyword">while</span> (i &lt; arrSource.length &amp;&amp; !isFound) arrSource[i].indexOf(<span class="string">"="</span>) &gt; <span class="number">0</span> &amp;&amp; arrSource[i].split(<span class="string">"="</span>)[<span class="number">0</span>].toLowerCase() == paramName.toLowerCase() &amp;&amp; (paramValue = arrSource[i].split(<span class="string">"="</span>)[<span class="number">1</span>], isFound = !<span class="number">0</span>), i++ </div><div class="line">    &#125; </div><div class="line">    <span class="keyword">return</span> paramValue == <span class="string">""</span> &amp;&amp; (paramValue = <span class="literal">null</span>), paramValue </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          <p>在写项目的时候碰到一个问题:<br>a标签点击跳转页面后,给当前点击的a标签添加的样式不会显示。<br>怎么解决呢？</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/07/23/截取url/#more" rel="contents">
+            <a class="btn" href="/2016/07/23/a/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1479,46 +1467,224 @@
 
       
         
-          
-            <p> Vue中的AJAX请求</p>
+          <p> Vue中的AJAX请求</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Vue可以借助于vue-resource来实现AJAX请求</div></pre></td></tr></table></figure>
 <ul>
 <li>http请求报文</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">浏览器与服务器数据交互是遵循http协议的，当浏览器要访问服务器的时候，浏览器需要将相关请求数据提交给服务器（例如：浏览器信息，url地址，参数等），通常是通过请求报文来提交的</div><div class="line"></div><div class="line">请求报文的格式分为：</div><div class="line">    1、请求报文行</div><div class="line">    2、请求报文头</div><div class="line">    3、请求报文体</div></pre></td></tr></table></figure>
-<ul>
-<li>http响应报文</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">当浏览器请求服务器的时候，服务器需要将数据返回给浏览器，这种数据是通过响应报文响应回浏览器的</div><div class="line"></div><div class="line"> 响应报文的格式分为：</div><div class="line">    1、响应报文行</div><div class="line">    2、响应报文头</div><div class="line">    3、响应报文体</div></pre></td></tr></table></figure>
-<ul>
-<li>请求报文和响应报文配图</li>
-</ul>
-<p><img src="https://github.com/HudadaHexiaolili/Blogphotos/blob/master/vue/d2-4.png?raw=true" alt="d2-4.png"></p>
-<h3 id="3-1-vue-resource"><a href="#3-1-vue-resource" class="headerlink" title="3.1 vue-resource"></a>3.1 vue-resource</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Vue与后台Api进行交互通常是利用vue-resource来实现的，本质上vue-resource是通过http来完成AJAX请求响应的</div></pre></td></tr></table></figure>
-<ul>
-<li>vue-resource GitHub 地址：<a href="https://github.com/pagekit/vue-resource" target="_blank" rel="external">https://github.com/pagekit/vue-resource</a></li>
-<li><p>vue-resource Http请求api参考（主要看这个）：<a href="https://github.com/pagekit/vue-resource/blob/master/docs/http.md" target="_blank" rel="external">https://github.com/pagekit/vue-resource/blob/master/docs/http.md</a></p>
-</li>
-<li><p>vue结合vue-resource写法步骤</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">1、通过 https://cdn.jsdelivr.net/vue.resource/1.2.1/vue-resource.min.js 下载到vue-resource文件</div><div class="line"></div><div class="line">2、在html页面中通过script标签导入vue-resource.min.js 文件后，就会自动的在Vue对象实例上初始化 $http</div><div class="line"></div><div class="line">3、使用</div><div class="line">// 全局Vue对象写法</div><div class="line">    Vue.http.get(&apos;/someUrl&apos;, [options]).then(successCallback, errorCallback);</div><div class="line">    Vue.http.post(&apos;/someUrl&apos;, [body], [options]).then(successCallback, errorCallback);</div><div class="line"></div><div class="line">// 在Vue对象中的写法</div><div class="line">    this.$http.get(&apos;/someUrl&apos;, [options]).then(successCallback, errorCallback);</div><div class="line">    this.$http.post(&apos;/someUrl&apos;, [body], [options]).then(successCallback, errorCallback);</div></pre></td></tr></table></figure>
-<ul>
-<li>vue-resource get请求</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">写法格式：</div><div class="line"> this.$http.get(&apos;请求的url&apos;, [可选参数对象，使用&#123;&#125;传参]).then(成功回调函数, 失败回调函数);</div><div class="line"> </div><div class="line">成功回调函数参数对象主要属性说明：</div><div class="line">1、url ： 请求的原始url</div><div class="line">2、body： 响应报文体中的数据（我们通常用这个属性获取服务器返回的数据）</div><div class="line">3、其他属性请看文档</div><div class="line"></div><div class="line">举例：</div><div class="line"> this.$http.get(&apos;http://vuecms.ittun.com/api/getlunbo?id=1&apos;).then(function(res)&#123;console.log(res.body)&#125;, function(err)&#123;//err是异常数据&#125;);</div></pre></td></tr></table></figure>
-<p><code>实例</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;div id=<span class="string">'#app'</span>&gt;</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">'getData'</span>&gt;</span> get请求 <span class="tag">&lt;<span class="name">button</span>&gt;</span></span></div><div class="line">    &#123;&#123; msg | json &#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="comment">//创建根实例</span></div><div class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</div><div class="line">    <span class="comment">//挂载</span></div><div class="line">    el:<span class="string">'#app'</span>,</div><div class="line">    <span class="attr">data</span>:&#123;</div><div class="line">        <span class="attr">msg</span>:[]</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">methods</span>:&#123;</div><div class="line">        <span class="attr">getData</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="comment">//发起请求</span></div><div class="line">            <span class="keyword">var</span> url = <span class="string">'http://182.254.146.100:8899/api/getnewslist'</span>;</div><div class="line">            <span class="keyword">this</span>.$http.get(url).then(</div><div class="line">                <span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</div><div class="line">                    <span class="keyword">this</span>.msg = response.body.message</div><div class="line">                &#125;</div><div class="line">            )</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<ul>
-<li>vue-resource post请求</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">写法格式：</div><div class="line"> this.$http.post(&apos;请求的url&apos;,[可选参数请求报文体对象body,使用&#123;&#125;传参], [可选参数对象，使用&#123;&#125;传参]).then(成功回调函数, 失败回调函数);</div><div class="line"> </div><div class="line">成功回调函数参数对象主要属性说明：</div><div class="line">1、url ： 请求的原始url</div><div class="line">2、body： 响应报文体中的数据（我们通常用这个属性获取服务器返回的数据）</div><div class="line">3、其他属性请看文档</div><div class="line"></div><div class="line">注意点：</div><div class="line">$http.post()方法中的第二个参数固定写成：&#123;emulateJSON:true&#125;,否则可能造成服务器无法接收到请求报文体中的参数值</div><div class="line"></div><div class="line">举例：</div><div class="line"> this.$http.post(&apos;http://vuecms.ittun.com/api/adddata?id=1&apos;  //请求的url</div><div class="line"> ,&#123;content:&apos;hello&apos;&#125;  //请求报文体中传入的参数对象，多个使用逗号分隔</div><div class="line"> ,&#123;emulateJSON:true&#125;  //固定写法，保证服务器可以获取到请求报文体参数值</div><div class="line"> ).then(function(res)&#123;console.log(res.body)&#125;, function(err)&#123;//err是异常数据&#125;);</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&apos;#app&apos;&gt;</div><div class="line"></div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">    var vm = new Vue(&#123;</div><div class="line">        el:&apos;#app&apos;,</div><div class="line">        methods:&#123;</div><div class="line">            postData:function()&#123;</div><div class="line">                var url = &apos;http://182.254.146.100:8899/api/postcomment/14&apos;;</div><div class="line">                this.$http.post(url,&#123;content:&apos;xxxxxxx&apos;&#125;,&#123;emulateJSON:true&#125;)</div><div class="line">                .then(function(resopnse)&#123;</div><div class="line">                    alert(&apos;success&apos;)</div><div class="line">                &#125;)</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<ul>
-<li>vue-resource jsonp请求</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">jsonp请求主要用来解决ajax跨域请求问题，使用jsonp实现跨域首先要保证服务器api支持jsonp请求的格式</div><div class="line"></div><div class="line"></div><div class="line">写法格式：</div><div class="line"> this.$http.jsonp(&apos;请求的url&apos;, [可选参数对象，使用&#123;&#125;传参]).then(成功回调函数, 失败回调函数);</div><div class="line"> </div><div class="line">成功回调函数参数对象主要属性说明：</div><div class="line">1、url ： 请求的原始url</div><div class="line">2、body： 响应报文体中的数据（我们通常用这个属性获取服务器返回的数据）</div><div class="line">3、其他属性请看文档</div><div class="line"></div><div class="line">举例：</div><div class="line"> this.$http.jsonp(&apos;http://vuecms.ittun.com/api/getlunbo?id=1&apos;).then(function(res)&#123;console.log(res.body)&#125;, function(err)&#123;//err是异常数据&#125;);</div></pre></td></tr></table></figure>
-<p><code>实例</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</div><div class="line">        <span class="attr">el</span>:<span class="string">'#app'</span>,</div><div class="line">        <span class="attr">data</span>:&#123;</div><div class="line">            <span class="attr">myData</span>:[],</div><div class="line">            <span class="attr">t1</span>:<span class="string">''</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">methods</span>:&#123;</div><div class="line">            <span class="attr">jsonpData</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                <span class="keyword">this</span>.$http.jsonp(<span class="string">"https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su"</span>, <span class="comment">//跨域请求接口</span></div><div class="line">                    &#123;</div><div class="line">                        <span class="attr">params</span>: &#123;</div><div class="line">                            <span class="attr">wd</span>: <span class="keyword">this</span>.t1,</div><div class="line">                        &#125;,</div><div class="line">                        <span class="attr">jsonp</span>: <span class="string">'cb'</span></div><div class="line">                    &#125;</div><div class="line">                ).then(</div><div class="line">                    <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</div><div class="line">                        <span class="keyword">this</span>.myData = <span class="built_in">JSON</span>.parse(res.bodyText).s</div><div class="line">                &#125;)</div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/03/21/vue的ajax/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    <div>
+      
+    </div>
+    <div>
+      
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hudadahexiaolili.github.io/2016/03/19/vue报错/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hudada">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/toux.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="胡甲俊的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/03/19/vue报错/" itemprop="url">Vue中vetur插件提示 'v-for' directives require 'v-bind:key' directives.错误的解决办法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-19T00:00:00+08:00">
+                2016-03-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue-js学习/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue.js学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2016/03/19/vue报错/" class="leancloud_visitors" data-flag-title="Vue中vetur插件提示 'v-for' directives require 'v-bind:key' directives.错误的解决办法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  241
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在用vscode编写vue代码时，因为安装的有vetur插件，所以当代码中有v-for语法时，会提示</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[vue-language-server] <span class="string">'v-for'</span> directives <span class="built_in">require</span> <span class="string">'v-bind:key'</span> directives.</div></pre></td></tr></table></figure>
+<p>vue在升级到2.2后，当在组件中使用 v-for 时， key 现在是必须的。</p>
+<p>下面是官方文档的说明:</p>
+<p><img src="http://images2015.cnblogs.com/blog/934644/201706/934644-20170626160132914-407314765.png" alt="&#39;说明&#39;"></p>
+<p>回头看一下，我们写的代码 v-for中有key，但是为什么还报错呢？</p>
+<p>一脸蒙蔽~~</p>
+<p>去<a href="https://github.com/vuejs/vetur/issues/261" target="_blank" rel="external">vetur插件</a>的github上搜了一下，发现有人提这个报错问题，该插件的作者给出了解决办法：</p>
+<p>``This is intended ESLint feature. You can turn off eslint check in future release. </p>
+<p>Setting vetur.validation.vue-html to false will disable it.``</p>
+<p>意思就是，这是ESLint的功能。对vue进行了eslint检查。</p>
+<p>那么我们就把eslint对该插件的检查关闭，</p>
+<p>在vscode中，打开 文件&gt;首选项&gt;设置 找到 </p>
+<p>vetur.configuration 把  “vetur.validation.template”: true  改成</p>
+<p>“vetur.validation.template”: false</p>
+<p>保存，我们再看一下vue文件，发现不报错了。</p>
+<p><img src="http://images2015.cnblogs.com/blog/934644/201706/934644-20170626160102993-1950038623.jpg" alt="&#39;wf&#39;"></p>
+
           
         
       
@@ -2165,209 +2331,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://hudadahexiaolili.github.io/2016/02/12/some-every/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hudada">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/toux.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="胡甲俊的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/02/12/some-every/" itemprop="url">js some,foreach,map,filter,every对比</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-02-12T00:00:00+08:00">
-                2016-02-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript学习/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2016/02/12/some-every/" class="leancloud_visitors" data-flag-title="js some,foreach,map,filter,every对比">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  603
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>希望通过这篇笔记,加深自己对 ES5 新增的数组方法的理解,可以帮我们少一些 for 循环.</p>
-<blockquote>
-<p><strong>[…].some(ck)函数       —-      某个一个为true,则为true</strong></p>
-</blockquote>
-<ol>
-<li>some意指”某些”,指是否”某些项”合乎条件。</li>
-<li>皇上:有一个满意的，就来侍寝就可以了。<br> (对数组中每个元素执行一次ck函数,直到某个元素返回true,则直接返回true。如果都返回false,则返回false。)</li>
-<li>返回值为 Boolean 值。</li>
-</ol>
-<p>检查整个数组中是否有满足ck函数的元素。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = [<span class="number">1</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">6</span>].some(  <span class="function">(<span class="params">v,i</span>)  =&gt;</span>  (v&gt;<span class="number">10</span>) )      </div><div class="line"><span class="comment">//所有元素都不满足，返回result = false</span></div><div class="line"><span class="keyword">var</span> result = [<span class="number">10</span>,<span class="number">5</span>,<span class="number">30</span>,<span class="number">60</span>].some(  <span class="function">(<span class="params">v,i</span>)  =&gt;</span>  (v&lt;<span class="number">10</span>) )      </div><div class="line"><span class="comment">//有一个(多个)满足，返回result  = true</span></div></pre></td></tr></table></figure></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/02/12/some-every/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-      
-    </div>
-    <div>
-      
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2418,7 +2381,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">28</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2440,7 +2403,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

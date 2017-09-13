@@ -490,51 +490,6 @@
   </entry>
   
   <entry>
-    <title>a标签点击跳转页面后怎么给当前点击的a标签添加样式</title>
-    <link href="https://hudadahexiaolili.github.io/2016/07/23/a/"/>
-    <id>https://hudadahexiaolili.github.io/2016/07/23/a/</id>
-    <published>2016-07-22T16:00:00.000Z</published>
-    <updated>2017-08-16T03:01:12.634Z</updated>
-    
-    <content type="html"><![CDATA[<p>在写项目的时候碰到一个问题:<br>a标签点击跳转页面后,给当前点击的a标签添加的样式不会显示。<br>怎么解决呢？</p>
-<a id="more"></a>
-<p><img src="https://github.com/HudadaHexiaolili/Blogphotos/blob/master/images/a%E6%A0%87%E7%AD%BE%E7%82%B9%E5%87%BB.png?raw=true" alt="问题样式图" title="问题样式图"></p>
-<blockquote>
-<p>问题描述</p>
-</blockquote>
-<p>原本点击仪表盘等标签后，该标签的背景颜色会发生改变，可点击之后，a标签会发生跳转，该标签的背景色也不会再显示。</p>
-<p>XML/HTML code：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">&lt;aside <span class="class"><span class="keyword">class</span></span>=<span class="string">'aside'</span>&gt;</div><div class="line">		&lt;div class='profile'&gt;</div><div class="line">			&lt;div class='avatar img-circle'&gt;</div><div class="line">				&lt;img src='./uploads/avatar.jpg' alt='您的头像'&gt;	</div><div class="line">			&lt;/div&gt;</div><div class="line">        &lt;h4&gt;&lt;span &gt;胡大大&lt;/span&gt;&lt;/h4&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">		&lt;div class='navs'&gt;</div><div class="line">			&lt;ul&gt;</div><div class="line">				&lt;li&gt;&lt;a href='dashboard.html'&gt;&lt;i class='fa fa-bar-chart '&gt;&lt;/i&gt;仪表盘&lt;/a&gt;&lt;/li&gt;</div><div class="line">				&lt;li&gt;&lt;a href='#' &gt;&lt;i class='fa fa fa-user'&gt;&lt;/i&gt;用户管理&lt;/a&gt;&lt;/li&gt;</div><div class="line">				&lt;li&gt;&lt;a href='./index.html'&gt;&lt;i class='fa fa-mortar-board'&gt;&lt;/i&gt;讲师管理&lt;/a&gt;&lt;/li&gt;</div><div class="line">				&lt;li&gt;</div><div class="line">					&lt;a href='#' class='course_click'&gt;</div><div class="line">						&lt;i class='fa fa-book'&gt;&lt;/i&gt;课程管理&lt;i class='arrow fa fa-angle-right pull-right'&gt;&lt;/i&gt;</div><div class="line">					&lt;/a&gt;</div><div class="line">					&lt;ul class='course ' style='display:none'&gt;</div><div class="line">						&lt;li&gt;&lt;a href='#'&gt;课程添加&lt;/a&gt;&lt;/li&gt;</div><div class="line">						&lt;li&gt;&lt;a href='#'&gt;课程列表&lt;/a&gt;&lt;/li&gt;</div><div class="line">						&lt;li&gt;&lt;a href='#'&gt;课程分类&lt;/a&gt;&lt;/li&gt;</div><div class="line">						&lt;li&gt;&lt;a href='#'&gt;课程专题&lt;/a&gt;&lt;/li&gt;</div><div class="line">					&lt;/ul&gt;</div><div class="line">				&lt;/li&gt;</div><div class="line">				&lt;li&gt;&lt;a href='#'&gt;&lt;i class='fa fa-link'&gt;&lt;/i&gt;广告管理&lt;/a&gt;&lt;/li&gt;</div><div class="line">				&lt;li&gt;</div><div class="line">					&lt;a href='#'  class='course_click'&gt;</div><div class="line">						&lt;i class='fa fa-cog fa-spin'&gt;&lt;/i&gt;系统设置&lt;i class='arrow fa fa-angle-right pull-right'&gt;&lt;/i&gt;</div><div class="line">					&lt;/a&gt;</div><div class="line">					&lt;ul class='course ' style='display:none'&gt;</div><div class="line">							&lt;li&gt;&lt;a href='#'&gt;网站设置&lt;/a&gt;&lt;/li&gt;</div><div class="line">							&lt;li&gt;&lt;a href='#'&gt;权限管理&lt;/a&gt;&lt;/li&gt;</div><div class="line">					&lt;/ul&gt;</div><div class="line">				&lt;/li&gt;</div><div class="line">			&lt;/ul&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">	&lt;/aside&gt;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>那么怎么解决呢？</p>
-</blockquote>
-<p>一般使用以下几种方法:</p>
-<ol>
-<li><p>用cookie记录这个打开的序列号，然后页面在跳转的时候再读出来。</p>
-</li>
-<li><p>循环a的链接，然后与location.href去比对，如果相同，或包含有同样字符串序列，则添加className.</p>
-</li>
-<li><p>给每个页面写一个页面的id值，然后每次判断，有值则addClass</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">给url后面加一个参数，比如a.php？1，取url后面的1，判断对应的是第一个导航添加一个选中的class</div><div class="line">实际网站中，通常用php做页面判断，判断为是，则相应的a解析出来有active样式，判断为否则a中的active样式不解析</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>个人比较推荐第二种写法:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 方法1</span></div><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> url = <span class="built_in">window</span>.location.href;</div><div class="line">    $(<span class="string">'.navs li a'</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> userUrl = returnFileName($(<span class="keyword">this</span>).attr(<span class="string">'href'</span>)) + returnUrl($(<span class="keyword">this</span>).attr(<span class="string">'href'</span>));</div><div class="line">        <span class="keyword">var</span> windowUrl = returnFileName(url) + returnUrl(url);</div><div class="line">        <span class="keyword">if</span> (userUrl == windowUrl ) &#123;</div><div class="line">            $(<span class="keyword">this</span>).addClass(<span class="string">'active'</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    <span class="comment">//以下为截取url的方法</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">returnUrl</span>(<span class="params">href</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> number = href.lastIndexOf(<span class="string">"/"</span>);</div><div class="line">        <span class="keyword">return</span> href.substring(number + <span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">returnFileName</span>(<span class="params">href</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> number1 = href.lastIndexOf(<span class="string">"/"</span>);</div><div class="line">        <span class="keyword">var</span> number2 = href.substring(<span class="number">0</span>, number1).lastIndexOf(<span class="string">"/"</span>);</div><div class="line">        <span class="keyword">return</span> href.substring(number1, number2 + <span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// 推荐这一种写法</span></div><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    $(<span class="string">'.navs li a'</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">if</span> ($($(<span class="keyword">this</span>))[<span class="number">0</span>].href == <span class="built_in">String</span>(<span class="built_in">window</span>.location))</div><div class="line">                $(<span class="keyword">this</span>).addClass(<span class="string">'active'</span>).attr(<span class="string">'href'</span>, <span class="string">'javascript:void(0);'</span>);</div><div class="line">        &#125;);</div><div class="line">    &#125;)</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在写项目的时候碰到一个问题:&lt;br&gt;a标签点击跳转页面后,给当前点击的a标签添加的样式不会显示。&lt;br&gt;怎么解决呢？&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="jQuery技术学习" scheme="https://hudadahexiaolili.github.io/categories/jQuery%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="a标签跳转" scheme="https://hudadahexiaolili.github.io/tags/a%E6%A0%87%E7%AD%BE%E8%B7%B3%E8%BD%AC/"/>
-    
-  </entry>
-  
-  <entry>
     <title>js获取url传递参数,js获取url？号后面的参数</title>
     <link href="https://hudadahexiaolili.github.io/2016/07/23/%E6%88%AA%E5%8F%96url/"/>
     <id>https://hudadahexiaolili.github.io/2016/07/23/截取url/</id>
@@ -582,6 +537,51 @@
     
     
       <category term="截取url" scheme="https://hudadahexiaolili.github.io/tags/%E6%88%AA%E5%8F%96url/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>a标签点击跳转页面后怎么给当前点击的a标签添加样式</title>
+    <link href="https://hudadahexiaolili.github.io/2016/07/23/a/"/>
+    <id>https://hudadahexiaolili.github.io/2016/07/23/a/</id>
+    <published>2016-07-22T16:00:00.000Z</published>
+    <updated>2017-08-16T03:01:12.634Z</updated>
+    
+    <content type="html"><![CDATA[<p>在写项目的时候碰到一个问题:<br>a标签点击跳转页面后,给当前点击的a标签添加的样式不会显示。<br>怎么解决呢？</p>
+<a id="more"></a>
+<p><img src="https://github.com/HudadaHexiaolili/Blogphotos/blob/master/images/a%E6%A0%87%E7%AD%BE%E7%82%B9%E5%87%BB.png?raw=true" alt="问题样式图" title="问题样式图"></p>
+<blockquote>
+<p>问题描述</p>
+</blockquote>
+<p>原本点击仪表盘等标签后，该标签的背景颜色会发生改变，可点击之后，a标签会发生跳转，该标签的背景色也不会再显示。</p>
+<p>XML/HTML code：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">&lt;aside <span class="class"><span class="keyword">class</span></span>=<span class="string">'aside'</span>&gt;</div><div class="line">		&lt;div class='profile'&gt;</div><div class="line">			&lt;div class='avatar img-circle'&gt;</div><div class="line">				&lt;img src='./uploads/avatar.jpg' alt='您的头像'&gt;	</div><div class="line">			&lt;/div&gt;</div><div class="line">        &lt;h4&gt;&lt;span &gt;胡大大&lt;/span&gt;&lt;/h4&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">		&lt;div class='navs'&gt;</div><div class="line">			&lt;ul&gt;</div><div class="line">				&lt;li&gt;&lt;a href='dashboard.html'&gt;&lt;i class='fa fa-bar-chart '&gt;&lt;/i&gt;仪表盘&lt;/a&gt;&lt;/li&gt;</div><div class="line">				&lt;li&gt;&lt;a href='#' &gt;&lt;i class='fa fa fa-user'&gt;&lt;/i&gt;用户管理&lt;/a&gt;&lt;/li&gt;</div><div class="line">				&lt;li&gt;&lt;a href='./index.html'&gt;&lt;i class='fa fa-mortar-board'&gt;&lt;/i&gt;讲师管理&lt;/a&gt;&lt;/li&gt;</div><div class="line">				&lt;li&gt;</div><div class="line">					&lt;a href='#' class='course_click'&gt;</div><div class="line">						&lt;i class='fa fa-book'&gt;&lt;/i&gt;课程管理&lt;i class='arrow fa fa-angle-right pull-right'&gt;&lt;/i&gt;</div><div class="line">					&lt;/a&gt;</div><div class="line">					&lt;ul class='course ' style='display:none'&gt;</div><div class="line">						&lt;li&gt;&lt;a href='#'&gt;课程添加&lt;/a&gt;&lt;/li&gt;</div><div class="line">						&lt;li&gt;&lt;a href='#'&gt;课程列表&lt;/a&gt;&lt;/li&gt;</div><div class="line">						&lt;li&gt;&lt;a href='#'&gt;课程分类&lt;/a&gt;&lt;/li&gt;</div><div class="line">						&lt;li&gt;&lt;a href='#'&gt;课程专题&lt;/a&gt;&lt;/li&gt;</div><div class="line">					&lt;/ul&gt;</div><div class="line">				&lt;/li&gt;</div><div class="line">				&lt;li&gt;&lt;a href='#'&gt;&lt;i class='fa fa-link'&gt;&lt;/i&gt;广告管理&lt;/a&gt;&lt;/li&gt;</div><div class="line">				&lt;li&gt;</div><div class="line">					&lt;a href='#'  class='course_click'&gt;</div><div class="line">						&lt;i class='fa fa-cog fa-spin'&gt;&lt;/i&gt;系统设置&lt;i class='arrow fa fa-angle-right pull-right'&gt;&lt;/i&gt;</div><div class="line">					&lt;/a&gt;</div><div class="line">					&lt;ul class='course ' style='display:none'&gt;</div><div class="line">							&lt;li&gt;&lt;a href='#'&gt;网站设置&lt;/a&gt;&lt;/li&gt;</div><div class="line">							&lt;li&gt;&lt;a href='#'&gt;权限管理&lt;/a&gt;&lt;/li&gt;</div><div class="line">					&lt;/ul&gt;</div><div class="line">				&lt;/li&gt;</div><div class="line">			&lt;/ul&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">	&lt;/aside&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>那么怎么解决呢？</p>
+</blockquote>
+<p>一般使用以下几种方法:</p>
+<ol>
+<li><p>用cookie记录这个打开的序列号，然后页面在跳转的时候再读出来。</p>
+</li>
+<li><p>循环a的链接，然后与location.href去比对，如果相同，或包含有同样字符串序列，则添加className.</p>
+</li>
+<li><p>给每个页面写一个页面的id值，然后每次判断，有值则addClass</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">给url后面加一个参数，比如a.php？1，取url后面的1，判断对应的是第一个导航添加一个选中的class</div><div class="line">实际网站中，通常用php做页面判断，判断为是，则相应的a解析出来有active样式，判断为否则a中的active样式不解析</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>个人比较推荐第二种写法:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 方法1</span></div><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> url = <span class="built_in">window</span>.location.href;</div><div class="line">    $(<span class="string">'.navs li a'</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> userUrl = returnFileName($(<span class="keyword">this</span>).attr(<span class="string">'href'</span>)) + returnUrl($(<span class="keyword">this</span>).attr(<span class="string">'href'</span>));</div><div class="line">        <span class="keyword">var</span> windowUrl = returnFileName(url) + returnUrl(url);</div><div class="line">        <span class="keyword">if</span> (userUrl == windowUrl ) &#123;</div><div class="line">            $(<span class="keyword">this</span>).addClass(<span class="string">'active'</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    <span class="comment">//以下为截取url的方法</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">returnUrl</span>(<span class="params">href</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> number = href.lastIndexOf(<span class="string">"/"</span>);</div><div class="line">        <span class="keyword">return</span> href.substring(number + <span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">returnFileName</span>(<span class="params">href</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> number1 = href.lastIndexOf(<span class="string">"/"</span>);</div><div class="line">        <span class="keyword">var</span> number2 = href.substring(<span class="number">0</span>, number1).lastIndexOf(<span class="string">"/"</span>);</div><div class="line">        <span class="keyword">return</span> href.substring(number1, number2 + <span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// 推荐这一种写法</span></div><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    $(<span class="string">'.navs li a'</span>).each(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">if</span> ($($(<span class="keyword">this</span>))[<span class="number">0</span>].href == <span class="built_in">String</span>(<span class="built_in">window</span>.location))</div><div class="line">                $(<span class="keyword">this</span>).addClass(<span class="string">'active'</span>).attr(<span class="string">'href'</span>, <span class="string">'javascript:void(0);'</span>);</div><div class="line">        &#125;);</div><div class="line">    &#125;)</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在写项目的时候碰到一个问题:&lt;br&gt;a标签点击跳转页面后,给当前点击的a标签添加的样式不会显示。&lt;br&gt;怎么解决呢？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="jQuery技术学习" scheme="https://hudadahexiaolili.github.io/categories/jQuery%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="a标签跳转" scheme="https://hudadahexiaolili.github.io/tags/a%E6%A0%87%E7%AD%BE%E8%B7%B3%E8%BD%AC/"/>
     
   </entry>
   
@@ -935,7 +935,7 @@
     <link href="https://hudadahexiaolili.github.io/2016/03/21/vue%E7%9A%84ajax/"/>
     <id>https://hudadahexiaolili.github.io/2016/03/21/vue的ajax/</id>
     <published>2016-03-20T16:00:00.000Z</published>
-    <updated>2017-09-11T17:04:52.782Z</updated>
+    <updated>2017-09-13T12:47:50.589Z</updated>
     
     <content type="html"><![CDATA[<p> Vue中的AJAX请求</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Vue可以借助于vue-resource来实现AJAX请求</div></pre></td></tr></table></figure>
@@ -943,6 +943,7 @@
 <li>http请求报文</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">浏览器与服务器数据交互是遵循http协议的，当浏览器要访问服务器的时候，浏览器需要将相关请求数据提交给服务器（例如：浏览器信息，url地址，参数等），通常是通过请求报文来提交的</div><div class="line"></div><div class="line">请求报文的格式分为：</div><div class="line">    1、请求报文行</div><div class="line">    2、请求报文头</div><div class="line">    3、请求报文体</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <ul>
 <li>http响应报文</li>
 </ul>
@@ -980,7 +981,11 @@
     <summary type="html">
     
       &lt;p&gt; Vue中的AJAX请求&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;Vue可以借助于vue-resource来实现AJAX请求&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;http请求报文&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;浏览器与服务器数据交互是遵循http协议的，当浏览器要访问服务器的时候，浏览器需要将相关请求数据提交给服务器（例如：浏览器信息，url地址，参数等），通常是通过请求报文来提交的&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;请求报文的格式分为：&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    1、请求报文行&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    2、请求报文头&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    3、请求报文体&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -990,6 +995,50 @@
       <category term="Vue.js" scheme="https://hudadahexiaolili.github.io/tags/Vue-js/"/>
     
       <category term="vue-rosource" scheme="https://hudadahexiaolili.github.io/tags/vue-rosource/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue中vetur插件提示 &#39;v-for&#39; directives require &#39;v-bind:key&#39; directives.错误的解决办法</title>
+    <link href="https://hudadahexiaolili.github.io/2016/03/19/vue%E6%8A%A5%E9%94%99/"/>
+    <id>https://hudadahexiaolili.github.io/2016/03/19/vue报错/</id>
+    <published>2016-03-18T16:00:00.000Z</published>
+    <updated>2017-09-13T12:54:00.105Z</updated>
+    
+    <content type="html"><![CDATA[<p>在用vscode编写vue代码时，因为安装的有vetur插件，所以当代码中有v-for语法时，会提示</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[vue-language-server] <span class="string">'v-for'</span> directives <span class="built_in">require</span> <span class="string">'v-bind:key'</span> directives.</div></pre></td></tr></table></figure>
+<p>vue在升级到2.2后，当在组件中使用 v-for 时， key 现在是必须的。</p>
+<p>下面是官方文档的说明:</p>
+<p><img src="http://images2015.cnblogs.com/blog/934644/201706/934644-20170626160132914-407314765.png" alt="&#39;说明&#39;"></p>
+<p>回头看一下，我们写的代码 v-for中有key，但是为什么还报错呢？</p>
+<p>一脸蒙蔽~~</p>
+<p>去<a href="https://github.com/vuejs/vetur/issues/261" target="_blank" rel="external">vetur插件</a>的github上搜了一下，发现有人提这个报错问题，该插件的作者给出了解决办法：</p>
+<p>``This is intended ESLint feature. You can turn off eslint check in future release. </p>
+<p>Setting vetur.validation.vue-html to false will disable it.``</p>
+<p>意思就是，这是ESLint的功能。对vue进行了eslint检查。</p>
+<p>那么我们就把eslint对该插件的检查关闭，</p>
+<p>在vscode中，打开 文件&gt;首选项&gt;设置 找到 </p>
+<p>vetur.configuration 把  “vetur.validation.template”: true  改成</p>
+<p>“vetur.validation.template”: false</p>
+<p>保存，我们再看一下vue文件，发现不报错了。</p>
+<p><img src="http://images2015.cnblogs.com/blog/934644/201706/934644-20170626160102993-1950038623.jpg" alt="&#39;wf&#39;"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在用vscode编写vue代码时，因为安装的有vetur插件，所以当代码中有v-for语法时，会提示&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;
+    
+    </summary>
+    
+      <category term="Vue.js学习" scheme="https://hudadahexiaolili.github.io/categories/Vue-js%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Vue.js" scheme="https://hudadahexiaolili.github.io/tags/Vue-js/"/>
+    
+      <category term="vue-for" scheme="https://hudadahexiaolili.github.io/tags/vue-for/"/>
+    
+      <category term="vetur" scheme="https://hudadahexiaolili.github.io/tags/vetur/"/>
     
   </entry>
   
@@ -1307,88 +1356,9 @@
       <category term="CSS学习" scheme="https://hudadahexiaolili.github.io/categories/CSS%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="垂直居中" scheme="https://hudadahexiaolili.github.io/tags/%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/"/>
-    
       <category term="css" scheme="https://hudadahexiaolili.github.io/tags/css/"/>
     
-  </entry>
-  
-  <entry>
-    <title>js some,foreach,map,filter,every对比</title>
-    <link href="https://hudadahexiaolili.github.io/2016/02/12/some-every/"/>
-    <id>https://hudadahexiaolili.github.io/2016/02/12/some-every/</id>
-    <published>2016-02-11T16:00:00.000Z</published>
-    <updated>2017-08-10T00:26:33.216Z</updated>
-    
-    <content type="html"><![CDATA[<p>希望通过这篇笔记,加深自己对 ES5 新增的数组方法的理解,可以帮我们少一些 for 循环.</p>
-<blockquote>
-<p><strong>[…].some(ck)函数       —-      某个一个为true,则为true</strong></p>
-</blockquote>
-<ol>
-<li>some意指”某些”,指是否”某些项”合乎条件。</li>
-<li>皇上:有一个满意的，就来侍寝就可以了。<br> (对数组中每个元素执行一次ck函数,直到某个元素返回true,则直接返回true。如果都返回false,则返回false。)</li>
-<li>返回值为 Boolean 值。</li>
-</ol>
-<p>检查整个数组中是否有满足ck函数的元素。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = [<span class="number">1</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">6</span>].some(  <span class="function">(<span class="params">v,i</span>)  =&gt;</span>  (v&gt;<span class="number">10</span>) )      </div><div class="line"><span class="comment">//所有元素都不满足，返回result = false</span></div><div class="line"><span class="keyword">var</span> result = [<span class="number">10</span>,<span class="number">5</span>,<span class="number">30</span>,<span class="number">60</span>].some(  <span class="function">(<span class="params">v,i</span>)  =&gt;</span>  (v&lt;<span class="number">10</span>) )      </div><div class="line"><span class="comment">//有一个(多个)满足，返回result  = true</span></div></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<blockquote>
-<p><strong>[…].every(ck)函数     —-          某一个为false，则返回false</strong> </p>
-</blockquote>
-<ul>
-<li>跟some为基友关系，同样是返回Boolean值。</li>
-<li>与some相比就是true和false调换一下。<br>  (每个数组元素都执行一次ck函数，直到某个元素执行函数ck返回false,则直接返回false,如果全部返回true，则返回true)</li>
-<li>不过，every需要每一个妃子都要让朕满意，否则——“来人，给我拖出去砍了！”<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = [<span class="number">5</span>,<span class="number">50</span>,<span class="number">35</span>,<span class="number">12</span>,<span class="number">85</span>].every( <span class="function">(<span class="params">v,i</span>) =&gt;</span> v&lt;<span class="number">51</span> )  </div><div class="line"><span class="comment">//返回有一个(多个)大于等于51,则返回 result = false</span></div><div class="line"><span class="keyword">var</span> result = [<span class="number">5</span>,<span class="number">50</span>,<span class="number">35</span>,<span class="number">12</span>,<span class="number">85</span>].every( <span class="function">(<span class="params">v,i</span>) =&gt;</span> v&lt;<span class="number">100</span> ) </div><div class="line"> <span class="comment">//全部小于100,则返回 result = true</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p><strong>[…].foreach(ck)函数       —-       循环而已</strong></p>
-</blockquote>
-<p>每个数组元素都执行一次ck函数，foreach函数无法用break跳出</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[<span class="number">50</span>, <span class="number">25</span>, <span class="number">49</span>].forEach( <span class="function">(<span class="params">v,i</span>) =&gt;</span> <span class="built_in">console</span>.log(v) );</div><div class="line"><span class="comment">//50     25      49</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>[…].filter(ck)函数      —-        得到返回值为true的元素的集合</strong></p>
-</blockquote>
-<p>每个数组元素都执行一次ck函数，最后返回每次元素执行ck函数后返回值的为true的元素集合(<strong>数组</strong>)<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> newArray = [<span class="number">50</span>,<span class="number">2</span>,<span class="number">60</span>,<span class="number">4</span>,<span class="number">53</span>,<span class="number">15</span>].filter( <span class="function">(<span class="params">v,i</span>) =&gt;</span> (v&gt;<span class="number">10</span>) ) </div><div class="line"><span class="comment">//返回数组中大于10的元素新数组  newArray = [50,60,53,15]</span></div></pre></td></tr></table></figure></p>
-<blockquote>
-<p><strong>[…].reduce(ck,init)      —-       依次执行ck(prv,next)</strong> </p>
-</blockquote>
-<p>数组依次执行ck函数。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</div><div class="line">restult.reduce(<span class="function">(<span class="params">a,b</span>)=&gt;</span> a+b,<span class="number">0</span>)  <span class="comment">// 返回 6</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>[…].map(ck)函数      —-         返回每个元素返回值的集合</strong></p>
-</blockquote>
-<p>每个数组元素都执行一次ck函数，最后返回每次元素执行ck函数后返回值的集合(数组)</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> newArray = [<span class="number">50</span>,<span class="number">30</span>,<span class="number">40</span>].map( <span class="function">(<span class="params">v,i</span>) =&gt;</span> v/<span class="number">10</span> )       </div><div class="line"><span class="comment">//每个元素除以10，最后返回一个新数组 newArray = [5,3,4]</span></div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;希望通过这篇笔记,加深自己对 ES5 新增的数组方法的理解,可以帮我们少一些 for 循环.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;[…].some(ck)函数       —-      某个一个为true,则为true&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;some意指”某些”,指是否”某些项”合乎条件。&lt;/li&gt;
-&lt;li&gt;皇上:有一个满意的，就来侍寝就可以了。&lt;br&gt; (对数组中每个元素执行一次ck函数,直到某个元素返回true,则直接返回true。如果都返回false,则返回false。)&lt;/li&gt;
-&lt;li&gt;返回值为 Boolean 值。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;检查整个数组中是否有满足ck函数的元素。&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; result = [&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;].some(  &lt;span class=&quot;function&quot;&gt;(&lt;span class=&quot;params&quot;&gt;v,i&lt;/span&gt;)  =&amp;gt;&lt;/span&gt;  (v&amp;gt;&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;) )      &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//所有元素都不满足，返回result = false&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; result = [&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;30&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;].some(  &lt;span class=&quot;function&quot;&gt;(&lt;span class=&quot;params&quot;&gt;v,i&lt;/span&gt;)  =&amp;gt;&lt;/span&gt;  (v&amp;lt;&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;) )      &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//有一个(多个)满足，返回result  = true&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="JavaScript学习" scheme="https://hudadahexiaolili.github.io/categories/JavaScript%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="some" scheme="https://hudadahexiaolili.github.io/tags/some/"/>
-    
-      <category term="foreach" scheme="https://hudadahexiaolili.github.io/tags/foreach/"/>
-    
-      <category term="map" scheme="https://hudadahexiaolili.github.io/tags/map/"/>
-    
-      <category term="filter" scheme="https://hudadahexiaolili.github.io/tags/filter/"/>
-    
-      <category term="every" scheme="https://hudadahexiaolili.github.io/tags/every/"/>
-    
-      <category term="JS数组" scheme="https://hudadahexiaolili.github.io/tags/JS%E6%95%B0%E7%BB%84/"/>
+      <category term="垂直居中" scheme="https://hudadahexiaolili.github.io/tags/%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/"/>
     
   </entry>
   
