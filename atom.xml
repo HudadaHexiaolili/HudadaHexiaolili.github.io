@@ -106,6 +106,43 @@
   </entry>
   
   <entry>
+    <title>Vue-router从入门到入门</title>
+    <link href="https://hudadahexiaolili.github.io/2017/05/11/v-router%E7%9A%84%E5%AD%A6%E4%B9%A0/"/>
+    <id>https://hudadahexiaolili.github.io/2017/05/11/v-router的学习/</id>
+    <published>2017-05-10T16:00:00.000Z</published>
+    <updated>2017-09-13T06:04:59.321Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<h2 id="get-started"><a href="#get-started" class="headerlink" title="get started"></a>get started</h2></blockquote>
+<p>用 Vue.js + vue-router 创建单页应用，是非常简单的。<br>使用 Vue.js ，我们已经可以通过组合组件来组成应用程序，当你要把 vue-router 添加进来，我们需要做的是，将组件(components)映射到路由(routes)，然后告诉 vue-router 在哪里渲染它们。</p>
+<p>你可以看看这个<a href="http://jsrun.net/pqiKp/edit" target="_blank" rel="external">例子</a></p>
+<blockquote>
+<h2 id="动态路由匹配"><a href="#动态路由匹配" class="headerlink" title="动态路由匹配"></a>动态路由匹配</h2></blockquote>
+<p>你可以看看这个<a href="http://jsrun.net/YqiKp/edit" target="_blank" rel="external">例子</a></p>
+<blockquote>
+<h2 id="路由嵌套"><a href="#路由嵌套" class="headerlink" title="路由嵌套"></a>路由嵌套</h2></blockquote>
+<p>你可以看看这个<a href="http://jsrun.net/ZqiKp/edit" target="_blank" rel="external">例子</a></p>
+<p>更多的内容(编程式导航、命名路由、重定向、导航钩子等)可以参照<a href="https://router.vuejs.org/zh-cn/essentials/getting-started.html" target="_blank" rel="external">Vue-router官网</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;h2 id=&quot;get-started&quot;&gt;&lt;a href=&quot;#get-started&quot; class=&quot;headerlink&quot; title=&quot;get started&quot;&gt;&lt;/a&gt;get started&lt;/h2&gt;&lt;/blockquote&gt;
+&lt;p&gt;用 Vue.j
+    
+    </summary>
+    
+      <category term="Vue.js学习" scheme="https://hudadahexiaolili.github.io/categories/Vue-js%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="Vue.js" scheme="https://hudadahexiaolili.github.io/tags/Vue-js/"/>
+    
+      <category term="v-router" scheme="https://hudadahexiaolili.github.io/tags/v-router/"/>
+    
+  </entry>
+  
+  <entry>
     <title>npm 列出所有可以用的版本的命令</title>
     <link href="https://hudadahexiaolili.github.io/2017/04/13/npm/"/>
     <id>https://hudadahexiaolili.github.io/2017/04/13/npm/</id>
@@ -1352,57 +1389,6 @@
       <category term="every" scheme="https://hudadahexiaolili.github.io/tags/every/"/>
     
       <category term="JS数组" scheme="https://hudadahexiaolili.github.io/tags/JS%E6%95%B0%E7%BB%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js 静态方法和实例方法的区别</title>
-    <link href="https://hudadahexiaolili.github.io/2016/01/12/staticMethod/"/>
-    <id>https://hudadahexiaolili.github.io/2016/01/12/staticMethod/</id>
-    <published>2016-01-11T16:00:00.000Z</published>
-    <updated>2017-08-09T13:47:34.607Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<p>希望通过这篇笔记，加深自己对 JavaScript 对象里面的<strong>静态方法</strong>、<strong>实例方法</strong>的理解。<br>把自己理解整理如下结构:</p>
-<ul>
-<li>静态方法和实例方法的声明方式</li>
-<li>静态方法和实例方法的调用方式</li>
-</ul>
-<hr>
-<a id="more"></a>
-<blockquote>
-<p>静态方法和实例方法的声明方式</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">user</span>(<span class="params">a, n</span>)</span>&#123;  </div><div class="line">    <span class="keyword">this</span>.a = a||<span class="string">'年龄'</span>;  </div><div class="line">    <span class="keyword">this</span>.n = n||<span class="string">'名字'</span>;  </div><div class="line">&#125;  </div><div class="line"><span class="comment">//声明静态变量  </span></div><div class="line">user.sayname = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">    alert(<span class="keyword">this</span>.name);  </div><div class="line">&#125;  </div><div class="line"><span class="comment">//声明动态变量  </span></div><div class="line">user.prototype.sayname2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  </div><div class="line">    alert(<span class="keyword">this</span>.name);  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>静态方法和实例方法的调用方式</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>)</span>&#123;</div><div class="line"> </div><div class="line">&#125;</div><div class="line">A.staticMethod = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="string">'静态方法'</span>);</div><div class="line">&#125;</div><div class="line">A.prototype.instaceMethod = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  alert(<span class="string">'实例方法'</span>);</div><div class="line">&#125;</div><div class="line">A.staticMethod();</div><div class="line"><span class="keyword">var</span> instace = <span class="keyword">new</span> A();</div><div class="line">instace.instaceMethod();</div></pre></td></tr></table></figure>
-<p>可以这么理解，静态方法是类直接调用，实例方法要new 出来的对象才能调用。</p>
-<blockquote>
-<p>小结</p>
-</blockquote>
-<p>从定义上，实例方法要用到function这个对象中的prototype属性来定义，静态方法通过A.直接定义；<br>从方法调用上，静态方法可以直接通过A.来调用，实例方法要通过先定义一个引用变量，指向构造函数定义的新对象。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;希望通过这篇笔记，加深自己对 JavaScript 对象里面的&lt;strong&gt;静态方法&lt;/strong&gt;、&lt;strong&gt;实例方法&lt;/strong&gt;的理解。&lt;br&gt;把自己理解整理如下结构:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;静态方法和实例方法的声明方式&lt;/li&gt;
-&lt;li&gt;静态方法和实例方法的调用方式&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-    
-    </summary>
-    
-      <category term="JavaScript学习" scheme="https://hudadahexiaolili.github.io/categories/JavaScript%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="静态方法" scheme="https://hudadahexiaolili.github.io/tags/%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="动态实例方法" scheme="https://hudadahexiaolili.github.io/tags/%E5%8A%A8%E6%80%81%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95/"/>
     
   </entry>
   
