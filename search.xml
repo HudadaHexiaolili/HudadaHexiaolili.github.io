@@ -98,17 +98,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[a标签点击跳转页面后怎么给当前点击的a标签添加样式]]></title>
-    <url>%2F2016%2F07%2F23%2Fa%2F</url>
-    <content type="text"><![CDATA[在写项目的时候碰到一个问题:a标签点击跳转页面后,给当前点击的a标签添加的样式不会显示。怎么解决呢？ 问题描述 原本点击仪表盘等标签后，该标签的背景颜色会发生改变，可点击之后，a标签会发生跳转，该标签的背景色也不会再显示。 XML/HTML code： 123456789101112131415161718192021222324252627282930313233343536&lt;aside class='aside'&gt; &lt;div class='profile'&gt; &lt;div class='avatar img-circle'&gt; &lt;img src='./uploads/avatar.jpg' alt='您的头像'&gt; &lt;/div&gt; &lt;h4&gt;&lt;span &gt;胡大大&lt;/span&gt;&lt;/h4&gt; &lt;/div&gt; &lt;div class='navs'&gt; &lt;ul&gt; &lt;li&gt;&lt;a href='dashboard.html'&gt;&lt;i class='fa fa-bar-chart '&gt;&lt;/i&gt;仪表盘&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href='#' &gt;&lt;i class='fa fa fa-user'&gt;&lt;/i&gt;用户管理&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href='./index.html'&gt;&lt;i class='fa fa-mortar-board'&gt;&lt;/i&gt;讲师管理&lt;/a&gt;&lt;/li&gt; &lt;li&gt; &lt;a href='#' class='course_click'&gt; &lt;i class='fa fa-book'&gt;&lt;/i&gt;课程管理&lt;i class='arrow fa fa-angle-right pull-right'&gt;&lt;/i&gt; &lt;/a&gt; &lt;ul class='course ' style='display:none'&gt; &lt;li&gt;&lt;a href='#'&gt;课程添加&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href='#'&gt;课程列表&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href='#'&gt;课程分类&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href='#'&gt;课程专题&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href='#'&gt;&lt;i class='fa fa-link'&gt;&lt;/i&gt;广告管理&lt;/a&gt;&lt;/li&gt; &lt;li&gt; &lt;a href='#' class='course_click'&gt; &lt;i class='fa fa-cog fa-spin'&gt;&lt;/i&gt;系统设置&lt;i class='arrow fa fa-angle-right pull-right'&gt;&lt;/i&gt; &lt;/a&gt; &lt;ul class='course ' style='display:none'&gt; &lt;li&gt;&lt;a href='#'&gt;网站设置&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href='#'&gt;权限管理&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;/aside&gt; 那么怎么解决呢？ 一般使用以下几种方法: 用cookie记录这个打开的序列号，然后页面在跳转的时候再读出来。 循环a的链接，然后与location.href去比对，如果相同，或包含有同样字符串序列，则添加className. 给每个页面写一个页面的id值，然后每次判断，有值则addClass 12给url后面加一个参数，比如a.php？1，取url后面的1，判断对应的是第一个导航添加一个选中的class实际网站中，通常用php做页面判断，判断为是，则相应的a解析出来有active样式，判断为否则a中的active样式不解析 个人比较推荐第二种写法: 1234567891011121314151617181920212223242526272829303132// 方法1$(document).ready(function () &#123; var url = window.location.href; $('.navs li a').each(function () &#123; var userUrl = returnFileName($(this).attr('href')) + returnUrl($(this).attr('href')); var windowUrl = returnFileName(url) + returnUrl(url); if (userUrl == windowUrl ) &#123; $(this).addClass('active'); &#125; &#125;); //以下为截取url的方法 function returnUrl(href) &#123; var number = href.lastIndexOf("/"); return href.substring(number + 1); &#125; function returnFileName(href) &#123; var number1 = href.lastIndexOf("/"); var number2 = href.substring(0, number1).lastIndexOf("/"); return href.substring(number1, number2 + 1); &#125;&#125;)// 推荐这一种写法$(document).ready(function () &#123; $('.navs li a').each(function () &#123; if ($($(this))[0].href == String(window.location)) $(this).addClass('active').attr('href', 'javascript:void(0);'); &#125;); &#125;)]]></content>
-      <categories>
-        <category>jQuery技术学习</category>
-      </categories>
-      <tags>
-        <tag>a标签跳转</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[js获取url传递参数,js获取url？号后面的参数]]></title>
     <url>%2F2016%2F07%2F23%2F%E6%88%AA%E5%8F%96url%2F</url>
     <content type="text"><![CDATA[我们在写项目的时候往往会需要获取 url 或截取 url ? 后的参数，为了方便，总结了以下几种方法: 方法一: 利用正则表达式 123456function getQueryString(name) &#123; var reg = new RegExp("(^|&amp;)" + name + "=([^&amp;]*)(&amp;|$)", "i"); var r = window.location.search.substr(1).match(reg); if (r != null) return unescape(r[2]); return null; &#125; 方法二: 获取 url 中 “?” 符号后的字串 12345678910111213function GetRequest() &#123; var url = location.search; //获取url中"?"符后的字串 var theRequest = new Object(); if (url.indexOf("?") != -1) &#123; var str = url.substr(1); strs = str.split("&amp;"); for(var i = 0; i &lt; strs.length; i ++) &#123; theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]); &#125; &#125; return theRequest; &#125; 方法三: 获取指定的 url 参数值 123456789101112131415/** * 获取指定的URL参数值 * URL:http://.../index?name=hudada * 参数：paramName URL参数 * 调用方法:getParam("name") * 返回值:hudada */ function getParam(paramName) &#123; paramValue = "", isFound = !1; if (this.location.search.indexOf("?") == 0 &amp;&amp; this.location.search.indexOf("=") &gt; 1) &#123; arrSource = unescape(this.location.search).substring(1, this.location.search.length).split("&amp;"), i = 0; while (i &lt; arrSource.length &amp;&amp; !isFound) arrSource[i].indexOf("=") &gt; 0 &amp;&amp; arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase() &amp;&amp; (paramValue = arrSource[i].split("=")[1], isFound = !0), i++ &#125; return paramValue == "" &amp;&amp; (paramValue = null), paramValue &#125; 其它参数介绍 1234567891011121314151617181920//设置或获取对象指定的文件名或路径。alert(window.location.pathname);//设置或获取整个 URL 为字符串。alert(window.location.href);//设置或获取与 URL 关联的端口号码。alert(window.location.port);//设置或获取 URL 的协议部分。alert(window.location.protocol);//设置或获取 href 属性中在井号“#”后面的分段。alert(window.location.hash);//设置或获取 location 或 URL 的 hostname 和 port 号码。alert(window.location.host);//设置或获取 href 属性中跟在问号后面的部分。alert(window.location.search);]]></content>
@@ -117,6 +106,17 @@
       </categories>
       <tags>
         <tag>截取url</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[a标签点击跳转页面后怎么给当前点击的a标签添加样式]]></title>
+    <url>%2F2016%2F07%2F23%2Fa%2F</url>
+    <content type="text"><![CDATA[在写项目的时候碰到一个问题:a标签点击跳转页面后,给当前点击的a标签添加的样式不会显示。怎么解决呢？ 问题描述 原本点击仪表盘等标签后，该标签的背景颜色会发生改变，可点击之后，a标签会发生跳转，该标签的背景色也不会再显示。 XML/HTML code： 123456789101112131415161718192021222324252627282930313233343536&lt;aside class='aside'&gt; &lt;div class='profile'&gt; &lt;div class='avatar img-circle'&gt; &lt;img src='./uploads/avatar.jpg' alt='您的头像'&gt; &lt;/div&gt; &lt;h4&gt;&lt;span &gt;胡大大&lt;/span&gt;&lt;/h4&gt; &lt;/div&gt; &lt;div class='navs'&gt; &lt;ul&gt; &lt;li&gt;&lt;a href='dashboard.html'&gt;&lt;i class='fa fa-bar-chart '&gt;&lt;/i&gt;仪表盘&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href='#' &gt;&lt;i class='fa fa fa-user'&gt;&lt;/i&gt;用户管理&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href='./index.html'&gt;&lt;i class='fa fa-mortar-board'&gt;&lt;/i&gt;讲师管理&lt;/a&gt;&lt;/li&gt; &lt;li&gt; &lt;a href='#' class='course_click'&gt; &lt;i class='fa fa-book'&gt;&lt;/i&gt;课程管理&lt;i class='arrow fa fa-angle-right pull-right'&gt;&lt;/i&gt; &lt;/a&gt; &lt;ul class='course ' style='display:none'&gt; &lt;li&gt;&lt;a href='#'&gt;课程添加&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href='#'&gt;课程列表&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href='#'&gt;课程分类&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href='#'&gt;课程专题&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;li&gt;&lt;a href='#'&gt;&lt;i class='fa fa-link'&gt;&lt;/i&gt;广告管理&lt;/a&gt;&lt;/li&gt; &lt;li&gt; &lt;a href='#' class='course_click'&gt; &lt;i class='fa fa-cog fa-spin'&gt;&lt;/i&gt;系统设置&lt;i class='arrow fa fa-angle-right pull-right'&gt;&lt;/i&gt; &lt;/a&gt; &lt;ul class='course ' style='display:none'&gt; &lt;li&gt;&lt;a href='#'&gt;网站设置&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href='#'&gt;权限管理&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;/aside&gt; 那么怎么解决呢？ 一般使用以下几种方法: 用cookie记录这个打开的序列号，然后页面在跳转的时候再读出来。 循环a的链接，然后与location.href去比对，如果相同，或包含有同样字符串序列，则添加className. 给每个页面写一个页面的id值，然后每次判断，有值则addClass 12给url后面加一个参数，比如a.php？1，取url后面的1，判断对应的是第一个导航添加一个选中的class实际网站中，通常用php做页面判断，判断为是，则相应的a解析出来有active样式，判断为否则a中的active样式不解析 个人比较推荐第二种写法: 1234567891011121314151617181920212223242526272829303132// 方法1$(document).ready(function () &#123; var url = window.location.href; $('.navs li a').each(function () &#123; var userUrl = returnFileName($(this).attr('href')) + returnUrl($(this).attr('href')); var windowUrl = returnFileName(url) + returnUrl(url); if (userUrl == windowUrl ) &#123; $(this).addClass('active'); &#125; &#125;); //以下为截取url的方法 function returnUrl(href) &#123; var number = href.lastIndexOf("/"); return href.substring(number + 1); &#125; function returnFileName(href) &#123; var number1 = href.lastIndexOf("/"); var number2 = href.substring(0, number1).lastIndexOf("/"); return href.substring(number1, number2 + 1); &#125;&#125;)// 推荐这一种写法$(document).ready(function () &#123; $('.navs li a').each(function () &#123; if ($($(this))[0].href == String(window.location)) $(this).addClass('active').attr('href', 'javascript:void(0);'); &#125;); &#125;)]]></content>
+      <categories>
+        <category>jQuery技术学习</category>
+      </categories>
+      <tags>
+        <tag>a标签跳转</tag>
       </tags>
   </entry>
   <entry>
@@ -219,8 +219,8 @@
         <category>CSS学习</category>
       </categories>
       <tags>
-        <tag>css</tag>
         <tag>垂直居中</tag>
+        <tag>css</tag>
       </tags>
   </entry>
   <entry>
@@ -310,9 +310,9 @@
         <category>GitHub学习</category>
       </categories>
       <tags>
-        <tag>github</tag>
         <tag>github仓库</tag>
         <tag>本地仓库</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
