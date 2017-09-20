@@ -131,10 +131,14 @@
 <meta property="og:site_name" content="胡甲俊的个人博客">
 <meta property="og:description" content="总结了一下数组去重的方法:  利用 indexOf 进行数组去重 12345678910var arr = [1,2,2,3,4,5,6,7,8,9,0,2,3,5,8,9,0,1];var arr1 = [];for( var i = 0; i &amp;lt; arr.length; i++)&amp;#123;    //ES5中引入了 indexOf 方法    if( arr1.indexOf( arr">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-22T12:48:00.537Z">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/1078621/201612/1078621-20161211203942241-417838408.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/1078621/201612/1078621-20161211204002304-2102473403.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/1078621/201612/1078621-20161211204642476-1611100838.png">
+<meta property="og:updated_time" content="2017-09-20T09:37:37.377Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js数组去重">
 <meta name="twitter:description" content="总结了一下数组去重的方法:  利用 indexOf 进行数组去重 12345678910var arr = [1,2,2,3,4,5,6,7,8,9,0,2,3,5,8,9,0,1];var arr1 = [];for( var i = 0; i &amp;lt; arr.length; i++)&amp;#123;    //ES5中引入了 indexOf 方法    if( arr1.indexOf( arr">
+<meta name="twitter:image" content="http://images2015.cnblogs.com/blog/1078621/201612/1078621-20161211203942241-417838408.png">
 
 
 
@@ -423,7 +427,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  196
+                  394
                 </span>
               
 
@@ -439,7 +443,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -470,6 +474,19 @@
 <blockquote>
 <h2 id="利用缓存对象实现数组去重"><a href="#利用缓存对象实现数组去重" class="headerlink" title="利用缓存对象实现数组去重"></a>利用缓存对象实现数组去重</h2></blockquote>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">0</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">0</span>,<span class="number">1</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> cache = &#123;&#125;,</div><div class="line">    arr1 = [];</div><div class="line"></div><div class="line"><span class="keyword">for</span>( <span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i ++ )&#123;</div><div class="line">    <span class="keyword">if</span>( !cache[ arr[ i ]]) &#123;</div><div class="line">        cache[ arr[ i ]] = <span class="literal">true</span>;</div><div class="line">        arr1.push( arr[ i ] );</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log( arr1 );</div></pre></td></tr></table></figure>
+<blockquote>
+<font color="deeppink">ES6数组去重</font>
+
+</blockquote>
+<p>ES6里新添加了两个很好用的东西，set和Array.from。<br>set是一种新的数据结构，它可以接收一个数组或者是类数组对象，自动去重其中的重复项目。</p>
+<p><img src="http://images2015.cnblogs.com/blog/1078621/201612/1078621-20161211203942241-417838408.png" alt="&#39;set&#39;"></p>
+<p>在这我们可以看见，重复的项目已经被去掉了，包括NaN。正常情况下，NaN === NaN 返回的是false，但是在set里，一样能够帮你去重，厉害了。</p>
+<p><img src="http://images2015.cnblogs.com/blog/1078621/201612/1078621-20161211204002304-2102473403.png" alt="&#39;结果&#39;"></p>
+<p>set返回的是一个对象，但是我们想要的是数组啊。<br>这回，就该轮到Array.from出场了，它的作用，就是可以把类数组对象、可迭代对象转化为数组。</p>
+<p><img src="http://images2015.cnblogs.com/blog/1078621/201612/1078621-20161211204642476-1611100838.png" alt="&#39;Array.from&#39;"></p>
+<p><strong>兼容性</strong> </p>
+<p>目前主流的浏览器，Chrome,Firfox,Opera，Safari，包括微软的Edge,都是支持的，唯独IE系列不支持</p>
+
       
     </div>
     
